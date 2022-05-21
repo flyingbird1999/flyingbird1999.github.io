@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Java基础1 | 叶少鹏的博客</title>
+  <title>Java基础 | 叶少鹏的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、Java介绍面向对象的特征（1）封装性 ​		封装是面向对象的核心思想，将对象的属性和行为封装起来，不需要让外界知道具体实现细节，这就是封装思想。例如，用户使用电脑，只需要使用手指敲键盘就可以了，无需知道电脑内部是如何工作的，即使用户可能碰巧知道电脑的工作原理，但在使用时，并不完全依赖电脑工作原理这些细节。 （2）继承性 ​		继承性主要描述的是类与类之间的关系，通过继承，可以在无需重新编写原">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础1">
-<meta property="og:url" content="http://example.com/2021/07/21/test/index.html">
+<meta property="og:title" content="Java基础">
+<meta property="og:url" content="http://example.com/2021/07/21/Java%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="叶少鹏的博客">
 <meta property="og:description" content="一、Java介绍面向对象的特征（1）封装性 ​		封装是面向对象的核心思想，将对象的属性和行为封装起来，不需要让外界知道具体实现细节，这就是封装思想。例如，用户使用电脑，只需要使用手指敲键盘就可以了，无需知道电脑内部是如何工作的，即使用户可能碰巧知道电脑的工作原理，但在使用时，并不完全依赖电脑工作原理这些细节。 （2）继承性 ​		继承性主要描述的是类与类之间的关系，通过继承，可以在无需重新编写原">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-21T08:55:08.000Z">
-<meta property="article:modified_time" content="2022-05-21T09:25:13.995Z">
+<meta property="article:modified_time" content="2022-05-21T09:43:46.013Z">
 <meta property="article:author" content="叶少鹏">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -155,19 +155,19 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java基础1
+      Java基础
     </h1>
   
 
         
-        <a href="/2021/07/21/test/" class="archive-article-date">
+        <a href="/2021/07/21/Java%E5%9F%BA%E7%A1%80/" class="archive-article-date">
   	<time datetime="2021-07-21T08:55:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-21</time>
 </a>
         
@@ -298,6 +298,259 @@ var _hmt = _hmt || [];
 <p>​		3、数据范围与字节数不一定相关。例如float数据范围比long更加广泛，但是float是4字节，long是8字节。</p>
 <p>​		4、浮点数当中的默认类型是double。如果一定要使用float类型，需要加上一个后缀F。</p>
 <p>​		5、如果是整型，默认为int类型，如果一定要使用long类型，需要加上一个后缀L。推荐使用大写字母后缀。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> <span class="variable">f</span> <span class="operator">=</span> <span class="number">123.4F</span>;</span><br><span class="line"><span class="type">long</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">198L</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>​		在程序运行期间，随时可能产生一些临时数据，应用程序会将这些数据保存在一些内存单元中，每个内存单元都用一个标识符来标识。这些内存单元我们称之为变量，定义的标识符就是变量名，内存单元中存储的数据就是变量的值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">0</span>,y;</span><br><span class="line"></span><br><span class="line">y = x + <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<p>​		1、如果创建多个变量，那么变量之间的名称不可以重复。</p>
+<p>​		2、对于float和long类型来说，字母后缀F和L不要丢掉。</p>
+<p>​		3、如果使用byte和short类型的变量，那么右侧数据值不能超过左侧类型的范围。</p>
+<p>​		4、没有进行赋值的变量，不能直接使用；一定要在赋值之后，才能使用。</p>
+<p>​		5、变量使用不能超过作用域范围。</p>
+<p>​		6、可以通过一个语句来创建多个变量，但一般不推荐这么使用。</p>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>自动类型转换（隐式）</p>
+<p>​		特点：代码不需要进行特殊处理，自动完成。</p>
+<p>​		规则：数据范围从小到大。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//左边是long类型，右边是默认的int类型，左右不一样。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//将右边的int变量，交给左侧long变量进行存储。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//int à long，符合数据范围从小到大的要求。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//这一行代码发生了自动类型转换。</span></span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+
+<p>强制类型转换（显式）</p>
+<p>​		特点：代码需要进行特殊的格式处理，不能自动完成。</p>
+<p>​		格式：范围小的类型 范围小的变量名 &#x3D; （范围小的类型） 原本范围大的数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> (<span class="type">int</span>) <span class="number">100L</span>;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<p>​		1、强制类型转换一般不推荐使用，因为可能发生精度损失、数据溢出。</p>
+<p>​		2、byte、short、char这三种类型都可以发生数学运算，例如“+”。</p>
+<p>​		3、byte、short、char这三种类型在运算的时候，都会被首先提升成为int类型，然后再计算。</p>
+<p>​		4、boolean类型不能发生数据类型转换。</p>
+<h2 id="ASCII编码表"><a href="#ASCII编码表" class="headerlink" title="ASCII编码表"></a>ASCII编码表</h2><p>ASCII值48的控制字符：0。</p>
+<p>ASCII值65的控制字符：A。</p>
+<p>ASCII值97的控制字符：a。</p>
+<p>ASCII码表：美国信息交换标准代码。</p>
+<p>Unicode码表：万国码。也是数字和符号的对照关系，开头0—127部分和ASSCII完全一样，但是从128开始包含有更多字符。</p>
+<h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><table>
+<thead>
+<tr>
+<th><strong>算术运算符</strong></th>
+<th><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>+</strong></td>
+<td>加法运算，字符串连接运算</td>
+</tr>
+<tr>
+<td><strong>-</strong></td>
+<td>减法运算</td>
+</tr>
+<tr>
+<td>*****</td>
+<td>乘法运算</td>
+</tr>
+<tr>
+<td><strong>&#x2F;</strong></td>
+<td>除法运算</td>
+</tr>
+<tr>
+<td><strong>%</strong></td>
+<td>取模运算，两个数字相除取余数</td>
+</tr>
+<tr>
+<td>**++**<strong>、–</strong></td>
+<td>自增自减运算</td>
+</tr>
+</tbody></table>
+<p>​		注意事项：一旦运算中有不同类型的数据，那么结果将会是数据范围大的那种。</p>
+<h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><table>
+<thead>
+<tr>
+<th><strong>赋值运算符</strong></th>
+<th><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>&#x3D;</strong></td>
+<td>等于号</td>
+</tr>
+<tr>
+<td><strong>+&#x3D;</strong></td>
+<td>加等于</td>
+</tr>
+<tr>
+<td><strong>-&#x3D;</strong></td>
+<td>减等于</td>
+</tr>
+<tr>
+<td>***&#x3D;**</td>
+<td>乘等于</td>
+</tr>
+<tr>
+<td><strong>&#x2F;&#x3D;</strong></td>
+<td>除等于</td>
+</tr>
+<tr>
+<td><strong>%&#x3D;</strong></td>
+<td>取模等</td>
+</tr>
+</tbody></table>
+<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><table>
+<thead>
+<tr>
+<th><strong>比较运算符</strong></th>
+<th><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>&#x3D;&#x3D;</strong></td>
+<td>比较符号两边是否相等</td>
+</tr>
+<tr>
+<td><strong>&lt;</strong></td>
+<td>比较左边数据是否小于右边</td>
+</tr>
+<tr>
+<td><strong>&gt;</strong></td>
+<td>比较左边数据是否大于右边</td>
+</tr>
+<tr>
+<td><strong>&lt;&#x3D;</strong></td>
+<td>比较左边数据是否小于或等于右边</td>
+</tr>
+<tr>
+<td><strong>&gt;&#x3D;</strong></td>
+<td>比较左边数据是否大于或等于右边</td>
+</tr>
+<tr>
+<td><strong>!&#x3D;</strong></td>
+<td>判断两边数据是否不相等</td>
+</tr>
+</tbody></table>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><table>
+<thead>
+<tr>
+<th><strong>逻辑运算符</strong></th>
+<th><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>&amp;&amp;</strong></td>
+<td>与</td>
+</tr>
+<tr>
+<td><strong>||</strong></td>
+<td>或</td>
+</tr>
+<tr>
+<td><strong>！</strong></td>
+<td>非</td>
+</tr>
+</tbody></table>
+<h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><p>一元运算符：只需要一个数据就可以进行操作的运算符。例如：!、++、- -。</p>
+<p>二元运算符：需要两个数据才可以进行操作的运算符。例如：+、-、*。</p>
+<p>三元运算符：需要三个数据才可以进行操作的运算符。</p>
+<p>格式：数据类型 变量名称 &#x3D; 条件判断 ? 表达式A : 表达式B</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line"><span class="comment">//判断a &gt; b是否成立。如果成立将a的值赋值给max；如果不成立将b的值赋值给max。</span></span><br><span class="line"><span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> a &gt; b ? a : b;<span class="comment">//最大值的变量</span></span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<p>​		1、必须同时保证表达式A和表达式B都符合左侧数据类型的要求。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">3</span> &gt; <span class="number">4</span> ? <span class="number">2.5</span> : <span class="number">10</span>;<span class="comment">//2.5是浮点数，错误</span></span><br></pre></td></tr></table></figure>
+
+<p>​		2、三元运算符的结果必须被使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(a &gt; b ? a ：b);<span class="comment">//正确，可以直接打印出来</span></span><br><span class="line">a &gt; b ? a : b;<span class="comment">// 三元运算符的结果没有被使用，错误</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="三、流程控制"><a href="#三、流程控制" class="headerlink" title="三、流程控制"></a>三、流程控制</h1><h2 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] srgs)</span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//顺序执行，根据编写规则，从上到下运行</span></span><br><span class="line">	System.out.println(<span class="number">1</span>);</span><br><span class="line">    System.out.println(<span class="number">2</span>);</span><br><span class="line">    System.out.println(<span class="number">3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h2><p>单if语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] srgs)</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;看见网吧！&quot;</span>);</span><br><span class="line">    <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">21</span>;</span><br><span class="line">    <span class="keyword">if</span> (age &gt;= <span class="number">18</span>)&#123;</span><br><span class="line">         System.out.println(<span class="string">&quot;进入网吧！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>if-else语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">13</span>;</span><br><span class="line">    <span class="keyword">if</span> (num % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">         System.out.println(<span class="string">&quot;偶数&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         System.out.println(<span class="string">&quot;奇数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>if-else if-else语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">    <span class="keyword">if</span> (x &gt;= <span class="number">3</span>)&#123;</span><br><span class="line">         y=<span class="number">2</span> * x + <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(-<span class="number">1</span> &lt; x &amp;&amp; x &lt; <span class="number">3</span>)&#123;</span><br><span class="line">         y = <span class="number">2</span> * x;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         y = <span class="number">2</span> * x – <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;结果是：&quot;</span>+y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>switch语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">switch</span> (num)&#123;</span><br><span class="line">         <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">              System.out .println(<span class="string">&quot;星期一&quot;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">         <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">              System.out .println(<span class="string">&quot;星期二&quot;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">         <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">              System.out .println(<span class="string">&quot;星期三&quot;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">         <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">              System.out .println(<span class="string">&quot;星期四&quot;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">         <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">              System.out .println(<span class="string">&quot;星期五&quot;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">         <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">              System.out .println(<span class="string">&quot;星期六&quot;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">         <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">              System.out .println(<span class="string">&quot;星期七&quot;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">         <span class="keyword">default</span>:</span><br><span class="line">              System.out.println(<span class="string">&quot;数据错误！&quot;</span>);</span><br><span class="line">              <span class="keyword">break</span>;<span class="comment">//最后一个break可以省略，但是不推荐</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<p>​		1、多个case后面的数据不可以重复。</p>
+<p>​		2、switch后面小括号当中只能是下列数据类型：</p>
+<p>​			基本数据类型：byte、short、char、int；</p>
+<p>​			引用数据类型：String字符串、enum枚举。</p>
+<p>​		3、switch语句格式很灵活，前后顺序可以颠倒，而且break语句还可以省略（匹配哪个case就从哪一个位置向下执行，直到遇到break或者整体结束为止）。</p>
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><p>for语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span> ; i &lt;=<span class="number">100</span> ; i++)&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;输出一百遍&quot;</span>+i);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">&quot;程序结束&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>while语句：</p>
+<p>public static void min(String [] srgs){</p>
+<p>​    int i &#x3D; 1;</p>
+<p>​    while (i &lt;&#x3D; 100){</p>
+<p>​         System.out.println(“输出一百遍”+i);</p>
+<p>​         i++;</p>
+<p>​    }</p>
+<p>}</p>
+<p>do…while语句：</p>
+<p>public static void min(String [] srgs){</p>
+<p>​    int i &#x3D; 1;</p>
+<p>​    do{</p>
+<p>​         System.out.println(“输出一百遍”+i);</p>
+<p>​         i++;</p>
+<p>​    }while(i &lt;&#x3D; 100);</p>
+<p>}</p>
+<p>三种循环的区别：</p>
+<p>1、如果条件判断从来没有满足过，那么for循环和while循环将会执行0次，但是do-while循环会至少执行一次。</p>
+<p>2、for循环的变量在小括号中定义，只有循环内部才可以使用。while循环和do-while循环初始化语句本来就在外面，所以出来循环之后还可以继续使用。</p>
+<p>break语句：</p>
+<p>1、可以用在switch语句当中，一旦执行，整个switch语句立即结束。</p>
+<p>2、还可以用在循环语句当中，一旦执行，整个循环语句立即结束。打断循环。</p>
+<p>public static void main(String [] args){</p>
+<p>​    for (int i &#x3D; 1; i &lt;&#x3D; 10; i ++){</p>
+<p>​    &#x2F;&#x2F;如果希望从第四次开始，后续都不要，就要打断循环</p>
+<p>​         if (i &#x3D;&#x3D; 4){&#x2F;&#x2F;如果当前是第四次</p>
+<p>​              break;&#x2F;&#x2F;那么就打断整个循环</p>
+<p>​         }</p>
+<p>​         System.out.println(“Hello” + i);</p>
+<p>​    }</p>
+<p>}</p>
+<p>continue语句：</p>
+<p>一旦执行，立刻跳过当前次循环剩余内容，马上开始下一次循环。</p>
+<p>public static void main(String [] args){</p>
+<p>​    for(int i ; i &lt;&#x3D; 10 ; i++){</p>
+<p>​         if (i&#x3D;&#x3D;4){&#x2F;&#x2F;如果当前是4层</p>
+<p>​              continue;&#x2F;&#x2F;跳过当前循环，马上开始下一次循环</p>
+<p>​         }</p>
+<p>​         System.out.println(i+“层到了”);</p>
+<p>​    }</p>
+<p>}</p>
+<p>死循环：永远停不下来的循环。</p>
+<p>死循环格式：</p>
+<p>while (true){</p>
+<p>​    循环体</p>
+<p>}</p>
+<p>例如：</p>
+<p>public static void main(String [] args){</p>
+<p>​    while (true){</p>
+<p>​         System.out.println(“Hello!”);</p>
+<p>​    }</p>
+<p>}</p>
+<p>循环嵌套：</p>
+<p>public static void main(String [] args){</p>
+<p>​    for (int hour &#x3D; 0; hour &lt; 24; hour++){&#x2F;&#x2F;外层控制小时</p>
+<p>​         </p>
+<p>​         for (int minute &#x3D; 0; minute &lt; 60; minute++){&#x2F;&#x2F;内层控制分钟</p>
+<p>​              System.out println(hour+“时”+minute+”分”);</p>
+<p>​         }</p>
+<p>​    }</p>
+<p>}</p>
+<p>for each：</p>
+<p>public static void main(String [] args){</p>
+<p>​    int[] ns &#x3D; {1, 4, 9, 16, 25};</p>
+<p>​    for (int n : ns){</p>
+<p>​         System.out println(n);</p>
+<p>​    }</p>
+<p>}</p>
 
       
 
@@ -367,7 +620,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/21/test/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/21/Java%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
     </div>
 </div>
 
