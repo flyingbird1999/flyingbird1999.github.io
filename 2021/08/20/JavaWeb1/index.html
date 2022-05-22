@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://example.com/2021/08/20/JavaWeb1/img/verify_code.png">
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg">
 <meta property="article:published_time" content="2021-08-20T11:29:53.000Z">
-<meta property="article:modified_time" content="2022-05-22T17:28:29.171Z">
+<meta property="article:modified_time" content="2022-05-22T17:36:22.217Z">
 <meta property="article:author" content="叶少鹏">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -706,97 +706,18 @@ var _hmt = _hmt || [];
 <p>​     4、特点：</p>
 <p>​          1、JS中，数组元素的类型可变。</p>
 <p>​          2、JS中，数组的长度可变。</p>
-<!DOCTYPE html>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Array对象<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="comment">//1、创建方式</span></span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">5</span>);</span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">var</span> arr3 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">var</span> arr4 = <span class="keyword">new</span> <span class="title class_">Array</span>();</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr1+<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr2+<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr3+<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr4+<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="comment">//数组元素的类型可变</span></span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="string">&quot;abc&quot;</span>,<span class="literal">true</span>];</span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr+<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr[<span class="number">0</span>]+<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr[<span class="number">1</span>]+<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr[<span class="number">2</span>]+<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="comment">//数组的长度可变</span></span></span><br><span class="line"><span class="language-javascript">	arr[<span class="number">10</span>] = <span class="string">&quot;hehe&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr[<span class="number">10</span>]+<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr[<span class="number">9</span>]+<span class="string">&quot;&lt;br/&gt;&quot;</span>);<span class="comment">//undefinrd</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="title function_">alert</span>(arr.<span class="property">length</span>);<span class="comment">//11</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="variable language_">document</span>.<span class="title function_">write</span>(arr.<span class="title function_">join</span>(<span class="string">&quot;--&quot;</span>)+<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">	arr.<span class="title function_">push</span>(<span class="number">11</span>);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<html lang="en">
-
-<head>
-
-<pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;
-</code></pre>
-<title>Array对象</title>
-
-<script>
-
-​    //1、创建方式
-
-​    var arr1 = new Array(1,2,3);
-
-​    var arr2 = new Array(5);
-
-​    var arr3 = [1,2,3,4];
-
-​    var arr4 = new Array();
-
- 
-
-​    document.write(arr1+”<br/>”);
-
-​    document.write(arr2+”<br/>”);
-
-​    document.write(arr3+”<br/>”);
-
-​    document.write(arr4+”<br/>”);
-
- 
-
-​    //数组元素的类型可变
-
-​    var arr = [1,”abc”,true];
-
-​    document.write(arr+”<br/>”);
-
- 
-
-​    document.write(arr[0]+”<br/>”);
-
-​    document.write(arr[1]+”<br/>”);
-
-​    document.write(arr[2]+”<br/>”);
-
- 
-
-​    //数组的长度可变
-
-​    arr[10] = “hehe”;
-
-​    document.write(arr[10]+”<br/>”);
-
-​    document.write(arr[9]+”<br/>”);//undefinrd
-
- 
-
-​    alert(arr.length);//11
-
- 
-
-​    document.write(arr.join(“--”)+”<br/>”);
-
-​    arr.push(11);
-
-</script>
-
-</head>
-
- 
-
-<body>
-
- 
-
-</body>
-
-</html>
-
- 
-
-<p><strong>对象：Date</strong></p>
-<p>Date：日期对象</p>
+<h2 id="对象：Date"><a href="#对象：Date" class="headerlink" title="对象：Date"></a>对象：Date</h2><p>Date：日期对象</p>
 <p>​     1、创建：</p>
 <p>​          var date = new Date();</p>
 <p>​     2、方法：</p>
 <p>​          toLocaleString()：返回当前date对象对应的时间本地字符串格式。</p>
 <p>​          getTime()：获取毫秒值。返回当前日期对象描述的时间到1970年1月1日零点的毫秒值差。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <!DOCTYPE html>
 
 <html lang="en">
