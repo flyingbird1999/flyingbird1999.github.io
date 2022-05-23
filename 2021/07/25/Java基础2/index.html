@@ -44,13 +44,8 @@
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image049.jpg">
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image051.jpg">
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image053.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image055.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image057.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image059.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image061.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image062.png">
 <meta property="article:published_time" content="2021-07-25T11:28:36.000Z">
-<meta property="article:modified_time" content="2022-05-22T11:31:38.824Z">
+<meta property="article:modified_time" content="2022-05-23T08:49:27.551Z">
 <meta property="article:author" content="叶少鹏">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -218,48 +213,13 @@ var _hmt = _hmt || [];
 <p>看一个类是否重写了toString方法，直接打印这个类对应对象的名字即可</p>
 <p>如果没有重写toString方法，那么打印的就是对象的地址值（默认）</p>
 <p>如果重写了toString方法，那么就按照重写的方式打印</p>
-<p>public class Person{</p>
-<p>​    private String name;</p>
-<p>​    private int age;</p>
-<p>​    </p>
-<p>​    &#x2F;&#x2F;直接打印对象的地址值没有意义，需要重写Object类的toString方法，打印对象的属性</p>
-<p>​    @Override</p>
-<p>​    public String toString(){</p>
-<p>​         return “Person{name &#x3D;” + name + “ , age &#x3D; “ + age}”;</p>
-<p>​    }</p>
-<p>​    public Person(){</p>
-<p>​        </p>
-<p>​    }</p>
-<p>​    </p>
-<p>​    public Person(String name, int age){</p>
-<p>​         this.name &#x3D; name;</p>
-<p>​         this.age &#x3D; age;</p>
-<p>​    }</p>
-<p>​    public String getName(){</p>
-<p>​         return name;</p>
-<p>​    }</p>
-<p>​    public void setName(String name){</p>
-<p>​         this.name &#x3D; name;</p>
-<p>​    }</p>
-<p>​    </p>
-<p>​    public String getAge(){</p>
-<p>​         return age;</p>
-<p>​    }</p>
-<p>​    public void setAge(int age){</p>
-<p>​         this.age &#x3D; age;</p>
-<p>​    }</p>
-<p>}</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         Person p &#x3D; new Person(“张三”, 18);</p>
-<p>​        String s &#x3D; p.toString();</p>
-<p>​        &#x2F;&#x2F;重写前：地址值，直接打印对象名字，其实就是调用toString方法</p>
-<p>​        &#x2F;&#x2F;重写后：Person{name &#x3D; 张三 , age &#x3D; 18}</p>
-<p>​        System.out.println(s); </p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>equals****方法</strong></p>
-<p>Person类默认继承了Object类，所以可以使用Object类中的equals方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//直接打印对象的地址值没有意义，需要重写Object类的toString方法，打印对象的属性</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> “Person&#123;name =” + name + “ , age = “ + age&#125;”;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Person</span><span class="params">()</span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span>&#123;</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">		<span class="built_in">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span>&#123;</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getAge</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span>&#123;</span><br><span class="line">		<span class="built_in">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>);</span><br><span class="line">		<span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> p.toString();</span><br><span class="line">		<span class="comment">//重写前：地址值，直接打印对象名字，其实就是调用toString方法</span></span><br><span class="line">		<span class="comment">//重写后：Person&#123;name = 张三 , age = 18&#125;</span></span><br><span class="line">		System.out.println(s); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="equals方法"><a href="#equals方法" class="headerlink" title="equals方法"></a>equals方法</h2><p>Person类默认继承了Object类，所以可以使用Object类中的equals方法。</p>
 <p>boolean equal（Object obj）指示其他某个对象是否与此对象相等。</p>
 <p>Object类equals方法的源码：</p>
 <p>public boolean equals(Object obj){</p>
@@ -274,17 +234,8 @@ var _hmt = _hmt || [];
 <p>this：哪个对象调用的方法，方法的this就是那个对象：p1调用的方法，所以this就是p1</p>
 <p>obj：传递过来的参数：p2</p>
 <p>this &#x3D;&#x3D; obj —&gt; p1 &#x3D;&#x3D; p2</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         Person p1 &#x3D; new Person(“张三”, 18);</p>
-<p>​         Person p2 &#x3D; new Person(“李四”, 18);</p>
-<p>​         </p>
-<p>​         p1&#x3D;p2;&#x2F;&#x2F;地址值赋值</p>
-<p>​         </p>
-<p>​         boolean b &#x3D; p1.equals(p2);</p>
-<p>​         System.out.println(b); &#x2F;&#x2F;true</p>
-<p>​    }</p>
-<p>}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="type">Person</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>);</span><br><span class="line">		<span class="type">Person</span> <span class="variable">p2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;李四&quot;</span>, <span class="number">18</span>);</span><br><span class="line">		</span><br><span class="line">		p1=p2;<span class="comment">//地址值赋值</span></span><br><span class="line">		</span><br><span class="line">		<span class="type">boolean</span> <span class="variable">b</span> <span class="operator">=</span> p1.equals(p2);</span><br><span class="line">		System.out.println(b); <span class="comment">//true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>重写equals方法：</p>
 <p>​     Object类的equals方法默认比较的是两个对象的地址值，没有意义。</p>
 <p>​     所以我们需要重写equals方法，比较两个对象的属性值（name，age）。</p>
@@ -294,118 +245,32 @@ var _hmt = _hmt || [];
 <p>​     Object obj &#x3D; p2 &#x3D; new Person(“李四”, 18);</p>
 <p>​     多态弊端：无法使用子类特有的内容（属性、方法）</p>
 <p>​     解决：可以使用向下转型（强转）把Object类型转换为Person</p>
-<p>public class Person{</p>
-<p>​    private String name;</p>
-<p>​    private int age;</p>
-<p>​    </p>
-<p>​    @Override</p>
-<p>​    public boolean equals(Object obj) {</p>
-<p>​         &#x2F;&#x2F;增加一个判断，如果彻底的参数obj是this本身，直接返回true，提高程序效率</p>
-<p>​         if (obj &#x3D;&#x3D; this){</p>
-<p>​              return true;</p>
-<p>​         }</p>
-<p>​         &#x2F;&#x2F;增加一个判断。传递的参数obj是null，直接返回false，提高持续的效率</p>
-<p>​         if (obj &#x3D;&#x3D; null){</p>
-<p>​              return false;</p>
-<p>​         }</p>
-<p>​         &#x2F;&#x2F;增加一个判断，是Person类再转换，防止转换异常</p>
-<p>​         if(obj instanceof Person){</p>
-<p>​              &#x2F;&#x2F;使用向下转型（强转）把Object类型转换为Person</p>
-<p>​              Person p &#x3D; (Person) obj;</p>
-<p>​              &#x2F;&#x2F;比较两个对象的属性；一个调用方法的this（p1），一个就是p（obj &#x3D; p2）</p>
-<p>​              boolean b &#x3D; this.name.equals(p.name)  %%  this.age &#x3D;&#x3D; p.age;</p>
-<p>​              return b;</p>
-<p>​         }</p>
-<p>​         &#x2F;&#x2F;不是Person类型直接返回false</p>
-<p>​         return false;</p>
-<p>​    }</p>
-<p>​    public Person(){</p>
-<p>​    }</p>
-<p>​    </p>
-<p>​    public Person(String name, int age){</p>
-<p>​         this.name &#x3D; name;</p>
-<p>​         this.age &#x3D; age;</p>
-<p>​    }</p>
-<p>​    public String getName(){</p>
-<p>​         return name;</p>
-<p>​    }</p>
-<p>​    public void setName(String name){</p>
-<p>​         this.name &#x3D; name;</p>
-<p>​    }</p>
-<p>​    </p>
-<p>​    public String getAge(){</p>
-<p>​         return age;</p>
-<p>​    }</p>
-<p>​    public void setAge(int age){</p>
-<p>​         this.age &#x3D; age;</p>
-<p>​    }</p>
-<p>}</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         Person p1 &#x3D; new Person(“张三”, 18);</p>
-<p>​         Person p2 &#x3D; new Person(“李四”, 18);</p>
-<p>​         </p>
-<p>​         Random r &#x3D; new Random();</p>
-<p>​         </p>
-<p>​         boolean b &#x3D; p1.equals(p2);</p>
-<p>​         System.out.println(b); &#x2F;&#x2F;false</p>
-<p>​    }</p>
-<p>}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object obj)</span> &#123;</span><br><span class="line">		<span class="comment">//增加一个判断，如果彻底的参数obj是this本身，直接返回true，提高程序效率</span></span><br><span class="line">		<span class="keyword">if</span> (obj == <span class="built_in">this</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//增加一个判断。传递的参数obj是null，直接返回false，提高持续的效率</span></span><br><span class="line">		<span class="keyword">if</span> (obj == <span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//增加一个判断，是Person类再转换，防止转换异常</span></span><br><span class="line">		<span class="keyword">if</span>(obj <span class="keyword">instanceof</span> Person)&#123;</span><br><span class="line">			<span class="comment">//使用向下转型（强转）把Object类型转换为Person</span></span><br><span class="line">			<span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> (Person) obj;</span><br><span class="line">			<span class="comment">//比较两个对象的属性；一个调用方法的this（p1），一个就是p（obj = p2）</span></span><br><span class="line">			<span class="type">boolean</span> <span class="variable">b</span> <span class="operator">=</span> <span class="built_in">this</span>.name.equals(p.name)  %%  <span class="built_in">this</span>.age == p.age;</span><br><span class="line">			<span class="keyword">return</span> b;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//不是Person类型直接返回false</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Person</span><span class="params">()</span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span>&#123;</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">		<span class="built_in">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span>&#123;</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getAge</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span>&#123;</span><br><span class="line">		<span class="built_in">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="type">Person</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>);</span><br><span class="line">		<span class="type">Person</span> <span class="variable">p2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;李四&quot;</span>, <span class="number">18</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="type">Random</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">		</span><br><span class="line">		<span class="type">boolean</span> <span class="variable">b</span> <span class="operator">=</span> p1.equals(p2);</span><br><span class="line">		System.out.println(b); <span class="comment">//false</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>Objects类的equals方法</p>
 <p>Objects类的equals方法：对两个对象进行比较，防止空指针异常。</p>
 <p>public static boolean equals(Object a, Object b){</p>
 <p>​     return (a&#x3D;&#x3D;b) || (a !&#x3D; null &amp;&amp; a.quals(b));</p>
 <p>}</p>
-<p>String s1 &#x3D; null;</p>
-<p>String s2 &#x3D; “abc”;</p>
-<p>boolean b &#x3D; s1.equals(s2);&#x2F;&#x2F;会抛出空指针异常</p>
-<p>System.out.println(b);</p>
-<p>boolean b2 &#x3D; Objects.equals(s1, s2);</p>
-<p>System.out.println(b);</p>
-<p><strong>二、时间日期类</strong></p>
-<p><strong>Date****类</strong></p>
-<p>表示日期和时间的类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> “abc”;</span><br><span class="line"></span><br><span class="line"><span class="type">boolean</span> <span class="variable">b</span> <span class="operator">=</span> s1.equals(s2);<span class="comment">//会抛出空指针异常</span></span><br><span class="line">System.out.println(b);</span><br><span class="line"></span><br><span class="line"><span class="type">boolean</span> <span class="variable">b2</span> <span class="operator">=</span> Objects.equals(s1, s2);</span><br><span class="line">System.out.println(b);</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、时间日期类"><a href="#二、时间日期类" class="headerlink" title="二、时间日期类"></a>二、时间日期类</h1><h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><p>表示日期和时间的类。</p>
 <p>注意：中国属于东八区，会把时间增加8个小时</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         &#x2F;&#x2F;获取当前系统时间到1970年1月1日00:00：00（英国格林威治）</p>
-<p>​         &#x2F;&#x2F;经历了多少毫秒</p>
-<p>​         System.out.println(System.currentTimeMillis());</p>
-<p>​    }</p>
-<p>}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="comment">//获取当前系统时间到1970年1月1日00:00：00（英国格林威治）</span></span><br><span class="line">		<span class="comment">//经历了多少毫秒</span></span><br><span class="line">		System.out.println(System.currentTimeMillis());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>Date类的空参数构造方法：</p>
 <p>​     Date()获取的就是当前系统的日期和时间</p>
 <p>Date类的带参数构造方法：</p>
 <p>​     Date(long date)传递毫秒值，把毫秒转换为Data日期</p>
 <p>Date类的成员方法：</p>
 <p>​     long getTime()把日期转换为毫秒（相当于System.currentTimeMillis()）</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         demo01();</p>
-<p>​         demo02();</p>
-<p>​    }</p>
-<p>​    &#x2F;* Date类的空参数构造方法：</p>
-<p>​    Date()获取的就是当前系统的日期和时间*&#x2F;</p>
-<p>​    public static void demo01(){</p>
-<p>​         Date date &#x3D; new Date();</p>
-<p>​        System.out.println(adte);&#x2F;&#x2F;获取系统当前时间Thu Jul 15 14:09:32 CST 2021</p>
-<p>​    }</p>
-<p>​    &#x2F;* Date类的带参数构造方法：</p>
-<p>​    Date(long date)传递毫秒值，把毫秒转换为Data日期*&#x2F;</p>
-<p>​    public static void demo02(){</p>
-<p>​         Date d1 &#x3D; new Date(15646565L);</p>
-<p>​        System.out.println(d1);&#x2F;&#x2F;将毫秒值转换为日期Thu Jan 01 12:20:46 CST 1970</p>
-<p>​    }</p>
-<p>​    &#x2F;* Date类的成员方法：</p>
-<p>​    long getTime()把日期转换为毫秒（相当于System.currentTimeMillis()）*&#x2F;</p>
-<p>​    public static void demo03(){</p>
-<p>​         Date date &#x3D; new Date();&#x2F;&#x2F;获取系统当前时间</p>
-<p>​        long time &#x3D; date.getTime();&#x2F;&#x2F;把日期转换为毫秒</p>
-<p>​        System.out.println(time);&#x2F;&#x2F; 1626329799295</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>DateFormat****类</strong></p>
-<p>是日期&#x2F;时间格式化子类的抽象类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		demo01();</span><br><span class="line">		demo02();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* Date类的空参数构造方法：</span></span><br><span class="line"><span class="comment">	Date()获取的就是当前系统的日期和时间*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo01</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">Date</span> <span class="variable">date</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">		System.out.println(adte);<span class="comment">//获取系统当前时间Thu Jul 15 14:09:32 CST 2021</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* Date类的带参数构造方法：</span></span><br><span class="line"><span class="comment">	Date(long date)传递毫秒值，把毫秒转换为Data日期*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo02</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">Date</span> <span class="variable">d1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">15646565L</span>);</span><br><span class="line">		System.out.println(d1);<span class="comment">//将毫秒值转换为日期Thu Jan 01 12:20:46 CST 1970</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* Date类的成员方法：</span></span><br><span class="line"><span class="comment">	long getTime()把日期转换为毫秒（相当于System.currentTimeMillis()）*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo03</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">Date</span> <span class="variable">date</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>();<span class="comment">//获取系统当前时间</span></span><br><span class="line">		<span class="type">long</span> <span class="variable">time</span> <span class="operator">=</span> date.getTime();<span class="comment">//把日期转换为毫秒</span></span><br><span class="line">		System.out.println(time);<span class="comment">// 1626329799295</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h2><p>是日期&#x2F;时间格式化子类的抽象类。</p>
 <p>作用：</p>
 <p>​     格式化（日期à文本）、解析（文本à日期）</p>
 <p>成员方法：</p>
@@ -453,42 +318,14 @@ var _hmt = _hmt || [];
 <p>​     写对应的模式，会把模式替换为对应的时间和日期：</p>
 <p>​          “yyyy-MM-dd HH:mm:ss”    “yyyy年MM月dd日 HH时mm分ss秒”</p>
 <p>​     注意：模式中的字母不能更改，连接模式的符号可以改变。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args) throws ParseException {</p>
-<p>​         demo01();</p>
-<p>​         demo02();</p>
-<p>​    }</p>
-<p>​    &#x2F;* 使用DateFormat类的方法format把日期格式化为文本</p>
-<p>​    String format(Date date)按照指定的模式，把Date日期格式化为符合模式的字符串*&#x2F;</p>
-<p>​    public static void demo01(){</p>
-<p>​         SimpleDateFormat sdf &#x3D; new SimpleDateFormat(“yyyy-MM-dd HH:mm:ss”);</p>
-<p>​         Date date &#x3D; new Date();</p>
-<p>​         String text &#x3D; sdf.format(date);&#x2F;&#x2F; format把日期格式化为文本</p>
-<p>​         System.out.println(text);&#x2F;&#x2F;2021-07-15 16:09:43</p>
-<p>​    }</p>
-<p>​    &#x2F;* 使用DateFormat类的方法parse把文本解析为</p>
-<p>​    Data parse(String source)把符合模式的字符串，解析为Date日期</p>
-<p>​    注意：parse方法声明了一个解析异常</p>
-<p>​    如果字符串和构造方法中的模式不一样，那么程序就会抛出此异常</p>
-<p>​    调用一个抛出了异常的方法，就必须处理这个异常</p>
-<p>​    要么throw继续声明抛出一个异常，要么try…catch自己处理这个异常*&#x2F;</p>
-<p>​    public static void demo02 () throws ParseException{</p>
-<p>​         SimpleDateFormat sdf &#x3D; new SimpleDateFormat(“yyyy-MM-dd HH:mm:ss”);</p>
-<p>​         Date date &#x3D; sdf.parse(“2021-07-15 16:09:43”);&#x2F;&#x2F;parse 解析为Date日期</p>
-<p>​         System.out.println(date);</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>Calendar****类</strong></p>
-<p>Calendar类：日历类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span> <span class="keyword">throws</span> ParseException &#123;</span><br><span class="line">		demo01();</span><br><span class="line">		demo02();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* 使用DateFormat类的方法format把日期格式化为文本</span></span><br><span class="line"><span class="comment">	String format(Date date)按照指定的模式，把Date日期格式化为符合模式的字符串*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo01</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br><span class="line">		<span class="type">Date</span> <span class="variable">date</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">		<span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> sdf.format(date);<span class="comment">// format把日期格式化为文本</span></span><br><span class="line">		System.out.println(text);<span class="comment">//2021-07-15 16:09:43</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* 使用DateFormat类的方法parse把文本解析为</span></span><br><span class="line"><span class="comment">	Data parse(String source)把符合模式的字符串，解析为Date日期</span></span><br><span class="line"><span class="comment">	注意：parse方法声明了一个解析异常</span></span><br><span class="line"><span class="comment">	如果字符串和构造方法中的模式不一样，那么程序就会抛出此异常</span></span><br><span class="line"><span class="comment">	调用一个抛出了异常的方法，就必须处理这个异常</span></span><br><span class="line"><span class="comment">	要么throw继续声明抛出一个异常，要么try…catch自己处理这个异常*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo02</span> <span class="params">()</span> <span class="keyword">throws</span> ParseException&#123;</span><br><span class="line">		<span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br><span class="line">		<span class="type">Date</span> <span class="variable">date</span> <span class="operator">=</span> sdf.parse(<span class="string">&quot;2021-07-15 16:09:43&quot;</span>);<span class="comment">//parse 解析为Date日期</span></span><br><span class="line">		System.out.println(date);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Calendar类"><a href="#Calendar类" class="headerlink" title="Calendar类"></a>Calendar类</h2><p>Calendar类：日历类。</p>
 <p>Calendar类是一个抽象类，里面提供了很多操作日历字段的方法（YEAR、MONTH、DAY_OF_MONTH、HOUR）。</p>
 <p>Calendar类无法直接创建对象使用，里边有一个静态方法叫getInstance()，该方法返回了Calendar类的子类对象。</p>
 <p>static Calendar getInstance()使用默认时区和语言环境获得一个日历。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         Calendar c &#x3D; Calendar.getInstance();&#x2F;&#x2F;多态</p>
-<p>​        System.out.println(c);&#x2F;&#x2F;获取系统当前时间Thu Jul 15 14:09:32 CST 2021</p>
-<p>​    }</p>
-<p>}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="type">Calendar</span> <span class="variable">c</span> <span class="operator">=</span> Calendar.getInstance();<span class="comment">//多态</span></span><br><span class="line">		System.out.println(c);<span class="comment">//获取系统当前时间Thu Jul 15 14:09:32 CST 2021</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>常用方法：</p>
 <p>public int get (int field)：返回给定日历字段的值。</p>
 <p>public void set (int field, int value)：将给定的日历字段设置为给定值。</p>
@@ -503,65 +340,9 @@ var _hmt = _hmt || [];
 <p>public static final int HOUR &#x3D; 10;                时</p>
 <p>public static final int MINUTE &#x3D; 12;              分</p>
 <p>public static final int SECOND &#x3D; 13;              秒</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         demo01();</p>
-<p>​         demo02();</p>
-<p>​         demo03();</p>
-<p>​         demo04();</p>
-<p>​    }</p>
-<p>​    &#x2F;* public int get (int field)：返回给定日历字段的值。</p>
-<p>​    参数：传递指定的日历字段（YEAR，MONTH….）</p>
-<p>​    返回值：日历字段代表具体的值*&#x2F;</p>
-<p>​    public static void demo01(){</p>
-<p>​         Calendar c &#x3D; Calendar.getInstance();</p>
-<p>​         int year &#x3D; c.get(Calendar.YEAR);</p>
-<p>​         System.out.println(year);</p>
-<p>​         int month &#x3D; c.get(Calendar.MONTH);</p>
-<p>​         System.out.println(month+1);&#x2F;&#x2F;西方的月份：0 —- 11</p>
-<p>​    }</p>
-<p>​    &#x2F;* public void set (int field, int value)：将给定的日历字段设置为给定值。</p>
-<p>​    参数：int field：传递指定的日历字段（YEAR，MONTH….）</p>
-<p>​          int value：日历字段代表具体的值*&#x2F; </p>
-<p>​    public static void demo02(){</p>
-<p>​         Calendar c &#x3D; Calendar.getInstance();</p>
-<p>​         &#x2F;&#x2F;分别设置年月日</p>
-<p>​         c.set(Calendar.YEAR,9999);</p>
-<p>​         c.set(Calendar.MONTH, 9);</p>
-<p>​         c.set(Calendar.DATE,9);</p>
-<p>​         &#x2F;&#x2F;设置年月日，可以使用set的重载方法</p>
-<p>​         c.get(8888, 8, 8);</p>
-<p>​         int year &#x3D; c.set(Calendar.YEAR);</p>
-<p>​         System.out.println(year);&#x2F;&#x2F;8888</p>
-<p>​         int year &#x3D; c.set(Calendar.MONTH);</p>
-<p>​         System.out.println(year);&#x2F;&#x2F;8</p>
-<p>​         int year &#x3D; c.set(Calendar.DATE);</p>
-<p>​         System.out.println(year);&#x2F;&#x2F;8</p>
-<p>​    }</p>
-<p>​    &#x2F;* public abstract void add (int field, int amount)：</p>
-<p>​    根据日历的规则，为给定的日历字段添加或减去指定的时间量。</p>
-<p>​    把指定的字段增加&#x2F;减少指定的值。</p>
-<p>​    参数：int field：传递指定的日历字段（YEAR，MONTH….）</p>
-<p>​          int amount：增加（正数）&#x2F;减少（负数）的值*&#x2F; </p>
-<p>​    public static void demo03(){</p>
-<p>​         Calendar c &#x3D; Calendar.getInstance();</p>
-<p>​         int year &#x3D; c.add(Calendar.YEAR, 2);</p>
-<p>​         System.out.println(year);&#x2F;&#x2F;2023</p>
-<p>​         int month &#x3D; c.add(Calendar.MONTH, -2);</p>
-<p>​         System.out.println(month);&#x2F;&#x2F;4</p>
-<p>​    }</p>
-<p>​    &#x2F;* public Date getTime()：</p>
-<p>​    返回一个表示此Calendar时间值（从历元到现在的毫秒偏移量）的Date。</p>
-<p>​    把日历对象，转换为日期对象。</p>
-<p>​    public static void demo04(){</p>
-<p>​         Calendar c &#x3D; Calendar.getInstance();</p>
-<p>​         Date date &#x3D; c.getTime();&#x2F;&#x2F;把日历转换为日期</p>
-<p>​         System.out.println(date);</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>三、<strong><strong>System</strong></strong>类</strong></p>
-<p><strong>常用方法</strong></p>
-<p>System类中提供了大量的静态方法，可以获取与系统相关的信息或系统级操作。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		demo01();</span><br><span class="line">		demo02();</span><br><span class="line">		demo03();</span><br><span class="line">		demo04();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* public int get (int field)：返回给定日历字段的值。</span></span><br><span class="line"><span class="comment">	参数：传递指定的日历字段（YEAR，MONTH….）</span></span><br><span class="line"><span class="comment">	返回值：日历字段代表具体的值*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo01</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">Calendar</span> <span class="variable">c</span> <span class="operator">=</span> Calendar.getInstance();</span><br><span class="line">		<span class="type">int</span> <span class="variable">year</span> <span class="operator">=</span> c.get(Calendar.YEAR);</span><br><span class="line">		System.out.println(year);</span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> <span class="variable">month</span> <span class="operator">=</span> c.get(Calendar.MONTH);</span><br><span class="line">		System.out.println(month+<span class="number">1</span>);<span class="comment">//西方的月份：0 ---- 11</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* public void set (int field, int value)：将给定的日历字段设置为给定值。</span></span><br><span class="line"><span class="comment">	参数：int field：传递指定的日历字段（YEAR，MONTH….）</span></span><br><span class="line"><span class="comment">		  int value：日历字段代表具体的值*/</span> </span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo02</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">Calendar</span> <span class="variable">c</span> <span class="operator">=</span> Calendar.getInstance();</span><br><span class="line">		<span class="comment">//分别设置年月日</span></span><br><span class="line">		c.set(Calendar.YEAR,<span class="number">9999</span>);</span><br><span class="line">		c.set(Calendar.MONTH, <span class="number">9</span>);</span><br><span class="line">		c.set(Calendar.DATE,<span class="number">9</span>);</span><br><span class="line">		<span class="comment">//设置年月日，可以使用set的重载方法</span></span><br><span class="line">		c.get(<span class="number">8888</span>, <span class="number">8</span>, <span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> <span class="variable">year</span> <span class="operator">=</span> c.set(Calendar.YEAR);</span><br><span class="line">		System.out.println(year);<span class="comment">//8888</span></span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> <span class="variable">year</span> <span class="operator">=</span> c.set(Calendar.MONTH);</span><br><span class="line">		System.out.println(year);<span class="comment">//8</span></span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> <span class="variable">year</span> <span class="operator">=</span> c.set(Calendar.DATE);</span><br><span class="line">		System.out.println(year);<span class="comment">//8</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* public abstract void add (int field, int amount)：</span></span><br><span class="line"><span class="comment">	根据日历的规则，为给定的日历字段添加或减去指定的时间量。</span></span><br><span class="line"><span class="comment">	把指定的字段增加/减少指定的值。</span></span><br><span class="line"><span class="comment">	参数：int field：传递指定的日历字段（YEAR，MONTH….）</span></span><br><span class="line"><span class="comment">		  int amount：增加（正数）/减少（负数）的值*/</span> </span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo03</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">Calendar</span> <span class="variable">c</span> <span class="operator">=</span> Calendar.getInstance();</span><br><span class="line">		<span class="type">int</span> <span class="variable">year</span> <span class="operator">=</span> c.add(Calendar.YEAR, <span class="number">2</span>);</span><br><span class="line">		System.out.println(year);<span class="comment">//2023</span></span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> <span class="variable">month</span> <span class="operator">=</span> c.add(Calendar.MONTH, -<span class="number">2</span>);</span><br><span class="line">		System.out.println(month);<span class="comment">//4</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* public Date getTime()：</span></span><br><span class="line"><span class="comment">	返回一个表示此Calendar时间值（从历元到现在的毫秒偏移量）的Date。</span></span><br><span class="line"><span class="comment">	把日历对象，转换为日期对象。*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo04</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">Calendar</span> <span class="variable">c</span> <span class="operator">=</span> Calendar.getInstance();</span><br><span class="line">		<span class="type">Date</span> <span class="variable">date</span> <span class="operator">=</span> c.getTime();<span class="comment">//把日历转换为日期</span></span><br><span class="line">		System.out.println(date);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、System类"><a href="#三、System类" class="headerlink" title="三、System类"></a>三、System类</h1><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><p>System类中提供了大量的静态方法，可以获取与系统相关的信息或系统级操作。</p>
 <p>public static long currentTimeMillis();</p>
 <p>返回以毫秒为单位的当前时间。</p>
 <p>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length);</p>
@@ -2013,8 +1794,7 @@ var _hmt = _hmt || [];
 <p>​        System.out.println(set);&#x2F;&#x2F;{张三 &#x3D; 18}</p>
 <p>​    }</p>
 <p>}</p>
-<p><strong>十一、<strong><strong>Debug</strong></strong>追踪</strong></p>
-<p>Debug调试程序：</p>
+<h1 id="十一、Debug追踪"><a href="#十一、Debug追踪" class="headerlink" title="十一、Debug追踪"></a>十一、Debug追踪</h1><p>Debug调试程序：</p>
 <p>可以让代码逐行执行，查看代码执行的过程，调试程序中出现的bug。</p>
 <p>使用方式：</p>
 <p>在行号右边，鼠标左键单击，添加断点（一般加在每个方法的第一行，哪里有bug添加到哪里）</p>
@@ -2027,69 +1807,27 @@ var _hmt = _hmt || [];
 <p>f9：跳到下一个断点，如果没有下一个断点，那么就结束程序</p>
 <p>ctrl+f2：退出debug模式，停止程序</p>
 <p>Console：切换到控制台</p>
-<p><strong>十二、异常</strong></p>
-<p><strong>异常的概念</strong></p>
-<p>异常：值得是程序执行过程中，出现非正常的情况，最终会导致JVM的非正常停止。</p>
+<h1 id="十二、异常"><a href="#十二、异常" class="headerlink" title="十二、异常"></a>十二、异常</h1><h2 id="异常的概念"><a href="#异常的概念" class="headerlink" title="异常的概念"></a>异常的概念</h2><p>异常：值得是程序执行过程中，出现非正常的情况，最终会导致JVM的非正常停止。</p>
 <p>异常指的并不是语法错误，语法错了，编译不通过，不会产生字节码文件，根本不能运行。</p>
-<p>异常体系：</p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image055.jpg" alt="img"></p>
-<p><strong>异常分类</strong></p>
-<p>java.lang.Throwable类是Java语言中所有错误或异常的超类。</p>
+<h2 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h2><p>java.lang.Throwable类是Java语言中所有错误或异常的超类。</p>
 <p>​     Exception：编译期异常，进行编译（写代码）Java程序出现的问题。</p>
 <p>​     RuntimeException：运行期异常，Java程序运行过程中出现问题。</p>
 <p>​          异常就相当于程序得了一个小毛病，把异常处理掉，程序可以继续执行。</p>
 <p>​     Error：错误</p>
 <p>​          错误就相当于程序得了无法治愈的毛病，必须修改源代码，程序才能继续执行。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) throws ParseException{&#x2F;&#x2F;中断处理</p>
-<p>​         &#x2F;&#x2F; Exception：编译期异常，进行编译（写代码）Java程序出现的问题</p>
-<p>​         SimpleDateFormat sdf &#x3D; new SimpleDateFormat(“yyyy-MM-dd”);&#x2F;&#x2F;用来格式化日期</p>
-<p>​         Date date &#x3D; sdf.parse(“1999-0909”);&#x2F;&#x2F;把字符串格式的日期，解析为Date格式的日期</p>
-<p>​         System.out.println(date);</p>
-<p>​    }</p>
-<p>}</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) {</p>
-<p>​         &#x2F;&#x2F; Exception：编译期异常，进行编译（写代码）Java程序出现的问题</p>
-<p>​         SimpleDateFormat sdf &#x3D; new SimpleDateFormat(“yyyy-MM-dd”);&#x2F;&#x2F;用来格式化日期</p>
-<p>​         Date date &#x3D; null;</p>
-<p>​         try{</p>
-<p>​              Date date &#x3D; sdf.parse(“1999-0909”);&#x2F;&#x2F;把字符串格式的日期，解析为Date格式的日期</p>
-<p>​         }catch(ParseException e){</p>
-<p>​              e.printStackTrace();</p>
-<p>​         }</p>
-<p>​         System.out.println(date);</p>
-<p>​         System.out.println(“后续代码”);&#x2F;&#x2F;后续代码继续执行</p>
-<p>​    }</p>
-<p>}</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) {</p>
-<p>​         &#x2F;&#x2F; RuntimeException：运行期异常，Java程序运行过程中出现问题</p>
-<p>​         int[] arr &#x3D; {1, 2, 3};</p>
-<p>​         try{</p>
-<p>​              &#x2F;&#x2F;可能会出现异常的代码</p>
-<p>​              System.out.println(arr[3]);</p>
-<p>​         }catch(Exception e)</p>
-<p>​              &#x2F;&#x2F;异常的处理逻辑</p>
-<p>​              System.out.println(e);</p>
-<p>​         }</p>
-<p>​         System.out.println(“后续代码”);&#x2F;&#x2F;后续代码继续执行</p>
-<p>​    }</p>
-<p>}</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) {</p>
-<p>​         &#x2F;&#x2F; Error：错误</p>
-<p>​         int[] arr &#x3D; new int[1024<em>1024</em>1024];&#x2F;&#x2F;内存溢出错误</p>
-<p>​         &#x2F;&#x2F;这个是错误，必须修改源代码</p>
-<p>​         System.out.println(“后续代码”);&#x2F;&#x2F;后续代码继续执行</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>异常产生的过程的解析</strong></p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image057.jpg" alt="img"></p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image059.jpg" alt="img"></p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image061.jpg" alt="img"></p>
-<p><strong>throw****关键字</strong></p>
-<p>可以使用throw关键字在指定的方法中抛出指定的异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ParseException&#123;<span class="comment">//中断处理</span></span><br><span class="line">		<span class="comment">// Exception：编译期异常，进行编译（写代码）Java程序出现的问题</span></span><br><span class="line">		<span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd&quot;</span>);<span class="comment">//用来格式化日期</span></span><br><span class="line">		<span class="type">Date</span> <span class="variable">date</span> <span class="operator">=</span> sdf.parse(<span class="string">&quot;1999-0909&quot;</span>);<span class="comment">//把字符串格式的日期，解析为Date格式的日期</span></span><br><span class="line">		System.out.println(date);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">// Exception：编译期异常，进行编译（写代码）Java程序出现的问题</span></span><br><span class="line">		<span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd&quot;</span>);<span class="comment">//用来格式化日期</span></span><br><span class="line">		<span class="type">Date</span> <span class="variable">date</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="type">Date</span> <span class="variable">date</span> <span class="operator">=</span> sdf.parse(<span class="string">&quot;1999-0909&quot;</span>);<span class="comment">//把字符串格式的日期，解析为Date格式的日期</span></span><br><span class="line">		&#125;<span class="keyword">catch</span>(ParseException e)&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(date);</span><br><span class="line">		System.out.println(<span class="string">&quot;后续代码&quot;</span>);<span class="comment">//后续代码继续执行</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">// RuntimeException：运行期异常，Java程序运行过程中出现问题</span></span><br><span class="line">		<span class="type">int</span>[] arr = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="comment">//可能会出现异常的代码</span></span><br><span class="line">			System.out.println(arr[<span class="number">3</span>]);</span><br><span class="line">		&#125;<span class="keyword">catch</span>(Exception e)</span><br><span class="line">			<span class="comment">//异常的处理逻辑</span></span><br><span class="line">			System.out.println(e);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">&quot;后续代码&quot;</span>);<span class="comment">//后续代码继续执行</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">// Error：错误</span></span><br><span class="line">		<span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">1024</span>*<span class="number">1024</span>*<span class="number">1024</span>];<span class="comment">//内存溢出错误</span></span><br><span class="line">		<span class="comment">//这个是错误，必须修改源代码</span></span><br><span class="line">		System.out.println(<span class="string">&quot;后续代码&quot;</span>);<span class="comment">//后续代码继续执行</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="throw关键字"><a href="#throw关键字" class="headerlink" title="throw关键字"></a>throw关键字</h2><p>可以使用throw关键字在指定的方法中抛出指定的异常。</p>
 <p>格式：</p>
 <p>​     throw new xxxException（“产生异常的原因”）</p>
 <p>注意：</p>
@@ -2100,44 +1838,12 @@ var _hmt = _hmt || [];
 <p>​     我们可以不处理，默认交给JVM处理（打印异常对象，中断程序）。</p>
 <p>​     ②throw关键字后边创建的是编译异常（写代码的时候报错），我们必须处理这个异常</p>
 <p>​     要么throws，要么try…catch。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) {</p>
-<p>​         int[] arr &#x3D; new int[3];</p>
-<p>​         int e &#x3D; getElement(arr, 0);</p>
-<p>​         System.out.println(e);</p>
-<p>​    }</p>
-<p>​    public static int getElement(int[] arr,int index){</p>
-<p>​         &#x2F;*我们可以对传递过来的数组，进行合法性校验</p>
-<p>​         如果数组arr的值是null</p>
-<p>​         那么我们就抛出空指针异常，告知方法的调用者“传递数组的值是null”</p>
-<p>​         注意：NullPointerException是一个运行期异常，我们不用处理，默认交给JVM处理*&#x2F;</p>
-<p>​         if(arr &#x3D;&#x3D; null){</p>
-<p>​              throw new NullPointerException(“传递的数组的是是null”);</p>
-<p>​         }</p>
-<p>​         &#x2F;*我们可以对传递过来的参数index，进行合法性校验</p>
-<p>​         如果index的范围不在数组的索引范围内</p>
-<p>​         那么我们就抛出数组索引越界异常，告知方法的调用者“传递的索引超出数组的使用范围”</p>
-<p>​         注意：ArrayIndexOutOfBounsException是一个运行期异常，我们不用处理，默认交给JVM处理*&#x2F;</p>
-<p>​         if(index &lt; 0 || index &gt; arr.length-1){</p>
-<p>​              throw new ArrayIndexOutOfBounsException(“传递的索引超出数组的使用范围”);</p>
-<p>​         }</p>
-<p>​         int ele &#x3D; arr[index];</p>
-<p>​         return ele;</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>Objects****非空判断</strong></p>
-<p>public static <T> T requireNonNull(T obj)：查看指定引用对象不是null。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) {</p>
-<p>​         method(null);</p>
-<p>​    }</p>
-<p>​    public static void method (Object obj){</p>
-<p>​         &#x2F;&#x2F;对传递过来的对象进行合法性判断，判断是否为null</p>
-<p>​         Objects.requireNonNull(obj, ”传递的对象的值是null”);</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>throws****关键字</strong></p>
-<p>throws关键字：异常处理的第一种方式，交给别人处理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>];</span><br><span class="line">		<span class="type">int</span> <span class="variable">e</span> <span class="operator">=</span> getElement(arr, <span class="number">0</span>);</span><br><span class="line">		System.out.println(e);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getElement</span><span class="params">(<span class="type">int</span>[] arr,<span class="type">int</span> index)</span>&#123;</span><br><span class="line">		<span class="comment">/*我们可以对传递过来的数组，进行合法性校验</span></span><br><span class="line"><span class="comment">		如果数组arr的值是null</span></span><br><span class="line"><span class="comment">		那么我们就抛出空指针异常，告知方法的调用者“传递数组的值是null”</span></span><br><span class="line"><span class="comment">		注意：NullPointerException是一个运行期异常，我们不用处理，默认交给JVM处理*/</span></span><br><span class="line">		<span class="keyword">if</span>(arr == <span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">NullPointerException</span>(<span class="string">&quot;传递的数组的是是null&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">/*我们可以对传递过来的参数index，进行合法性校验</span></span><br><span class="line"><span class="comment">		如果index的范围不在数组的索引范围内</span></span><br><span class="line"><span class="comment">		那么我们就抛出数组索引越界异常，告知方法的调用者“传递的索引超出数组的使用范围”</span></span><br><span class="line"><span class="comment">		注意：ArrayIndexOutOfBounsException是一个运行期异常，我们不用处理，默认交给JVM处理*/</span></span><br><span class="line">		<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt; arr.length-<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ArrayIndexOutOfBounsException</span>(<span class="string">&quot;传递的索引超出数组的使用范围&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> <span class="variable">ele</span> <span class="operator">=</span> arr[index];</span><br><span class="line">		<span class="keyword">return</span> ele;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Objects非空判断"><a href="#Objects非空判断" class="headerlink" title="Objects非空判断"></a>Objects非空判断</h2><p><code>public static &lt;T&gt; T requireNonNull(T obj)</code>：查看指定引用对象不是null。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		method(<span class="literal">null</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method</span> <span class="params">(Object obj)</span>&#123;</span><br><span class="line">		<span class="comment">//对传递过来的对象进行合法性判断，判断是否为null</span></span><br><span class="line">		Objects.requireNonNull(obj, <span class="string">&quot;传递的对象的值是null&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="throws关键字"><a href="#throws关键字" class="headerlink" title="throws关键字"></a>throws关键字</h2><p>throws关键字：异常处理的第一种方式，交给别人处理。</p>
 <p>作用：</p>
 <p>当方法内部抛出异常对象的时候，那么我们必须处理这个一个对象。</p>
 <p>可以使用throws关键字处理异常对象，会把异常对象声明抛出给方法的调用者处理（自己不处理，给别人处理），最终交给JVM处理à中断处理。</p>
@@ -2155,30 +1861,9 @@ var _hmt = _hmt || [];
 <p>4、调用一个声明抛出异常的方法，我们就必须处理声明的异常。</p>
 <p>​     要么继续使用throws声明抛出，交给方法的调用者处理，最终交给JVM。</p>
 <p>​     要么try…catch自己处理异常。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) throws FileNotFoundException, IOException {</p>
-<p>​         readFile(“c:\a.txt”);</p>
-<p>​    }</p>
-<p>​    &#x2F;*定义一个方法：对传递的文件路径合法性判断</p>
-<p>​    如果路径不是“c:\a.txt”，那么我们就抛出文件找不到异对象，告知方法的调用者</p>
-<p>​    注意：</p>
-<p>​         FileNotFoundException是编译异常，抛出了编译异常，就必须处理这个异常</p>
-<p>​         可以使用throws继续声明抛出FileNotFoundException这个异常对象，让方法的调用者处理*&#x2F;</p>
-<p>​    public static void readFile (String fileName) throws FileNotFoundException, IOException {</p>
-<p>​         if(fileName.equals(“c:\\a.txt”)){</p>
-<p>​              throw new FileNotFoundException(“传递的文件路径不是c:\a.txt”);</p>
-<p>​         }</p>
-<p>​         &#x2F;*如果传递的参数，不是.txt结尾</p>
-<p>​         那么我们就告知IO异常对象，告知方法的调用者，文件后缀名不对*&#x2F;</p>
-<p>​         if(!fileName.endsWith(“.txt”)){</p>
-<p>​              throw new IOException(“文件后的缀名不正确”);</p>
-<p>​         }</p>
-<p>​         </p>
-<p>​         System.out.println(“路径没有问题，读取文件”);</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>try…catch</strong></p>
-<p>try…catch…：异常处理的第二种方式，自己处理异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException, IOException &#123;</span><br><span class="line">		readFile(<span class="string">&quot;c:\\a.txt&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*定义一个方法：对传递的文件路径合法性判断</span></span><br><span class="line"><span class="comment">	如果路径不是“c:\\a.txt”，那么我们就抛出文件找不到异对象，告知方法的调用者</span></span><br><span class="line"><span class="comment">	注意：</span></span><br><span class="line"><span class="comment">		FileNotFoundException是编译异常，抛出了编译异常，就必须处理这个异常</span></span><br><span class="line"><span class="comment">		可以使用throws继续声明抛出FileNotFoundException这个异常对象，让方法的调用者处理*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">readFile</span> <span class="params">(String fileName)</span> <span class="keyword">throws</span> FileNotFoundException, IOException &#123;</span><br><span class="line">		<span class="keyword">if</span>(fileName.equals(<span class="string">&quot;c:\\\\a.txt&quot;</span>))&#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">FileNotFoundException</span>(<span class="string">&quot;传递的文件路径不是c:\\a.txt&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">/*如果传递的参数，不是.txt结尾</span></span><br><span class="line"><span class="comment">		那么我们就告知IO异常对象，告知方法的调用者，文件后缀名不对*/</span></span><br><span class="line">		<span class="keyword">if</span>(!fileName.endsWith(<span class="string">&quot;.txt&quot;</span>))&#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IOException</span>(<span class="string">&quot;文件后的缀名不正确&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;路径没有问题，读取文件&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="try…catch"><a href="#try…catch" class="headerlink" title="try…catch"></a>try…catch</h2><p>try…catch…：异常处理的第二种方式，自己处理异常。</p>
 <p>格式：</p>
 <p>​     try{</p>
 <p>​          可能产生异常的代码</p>
@@ -2193,59 +1878,14 @@ var _hmt = _hmt || [];
 <p>1、try中可能会抛出多个异常对象，那么就可以使用多个catch来处理这些异常对象。</p>
 <p>2、如果try中产生了异常，那么就会执行catch中的异常处理逻辑，执行完毕catch中的处理逻辑，继续执行try…catch之后的代码。</p>
 <p>如果try中没有产生异常，那么就不会执行catch中异常的处理逻辑，执行完try中的代码，继续执行try…catch之后的代码。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) {</p>
-<p>​         try{</p>
-<p>​              &#x2F;&#x2F;可能产生异常的代码</p>
-<p>​              readFile(“c:\a.txt”);</p>
-<p>​         }catch(IOException e){&#x2F;&#x2F;try中抛出什么异常对象，catch就定义什么异常变量，接收这个异常对象</p>
-<p>​              &#x2F;&#x2F;异常的处理逻辑</p>
-<p>​              System.out.println(“catch-传递的文件后缀不是.txt”);</p>
-<p>​         }</p>
-<p>​         System.out.println(”后续代码”) ;</p>
-<p>​    }</p>
-<p>​         &#x2F;*如果传递的参数，不是.txt结尾</p>
-<p>​         那么我们就告知IO异常对象，告知方法的调用者，文件后缀名不对*&#x2F;</p>
-<p>​    public static void readFile (String fileName) throws IOException {</p>
-<p>​         if(!fileName.endsWith(“.txt”)){</p>
-<p>​              throw new IOException(“文件后的缀名不正确”);</p>
-<p>​         }</p>
-<p>​         </p>
-<p>​         System.out.println(“路径没有问题，读取文件”);</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>Throwable****类</strong></p>
-<p>public String getMessage()：返回此Throwable的简短信息。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="comment">//可能产生异常的代码</span></span><br><span class="line">			readFile(<span class="string">&quot;c:\\a.txt&quot;</span>);</span><br><span class="line">		&#125;<span class="keyword">catch</span>(IOException e)&#123;<span class="comment">//try中抛出什么异常对象，catch就定义什么异常变量，接收这个异常对象</span></span><br><span class="line">			<span class="comment">//异常的处理逻辑</span></span><br><span class="line">			System.out.println(<span class="string">&quot;catch-传递的文件后缀不是.txt&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">&quot;后续代码&quot;</span>) ;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">/*如果传递的参数，不是.txt结尾</span></span><br><span class="line"><span class="comment">		那么我们就告知IO异常对象，告知方法的调用者，文件后缀名不对*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">readFile</span> <span class="params">(String fileName)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">		<span class="keyword">if</span>(!fileName.endsWith(<span class="string">&quot;.txt&quot;</span>))&#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IOException</span>(<span class="string">&quot;文件后的缀名不正确&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;路径没有问题，读取文件&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Throwable类"><a href="#Throwable类" class="headerlink" title="Throwable类"></a>Throwable类</h2><p>public String getMessage()：返回此Throwable的简短信息。</p>
 <p>public String toString()：返回此Throwable的详细消息字符串。</p>
 <p>public void printStackTrace()：JVM打印异常对象，默认调用此方法，打印的异常信息是最全面的。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) {</p>
-<p>​         try{</p>
-<p>​              &#x2F;&#x2F;可能产生异常的代码</p>
-<p>​              readFile(“c:\a.txt”);</p>
-<p>​         }catch(IOException e){&#x2F;&#x2F;try中抛出什么异常对象，catch就定义什么异常变量，接收这个异常对象</p>
-<p>​              &#x2F;&#x2F;异常的处理逻辑</p>
-<p>​              System.out.println(e.getMessage());&#x2F;&#x2F;文件的后缀名不正确</p>
-<p>​              System.out.println(e.toString ());&#x2F;&#x2F;java.io.IOException：文件的后缀名不正确</p>
-<p>​              e.printStackTrace ();</p>
-<p>​              &#x2F;*java.io.IOException：文件的后缀名不正确</p>
-<p>​                  at ptu.demo1.Exception.readFile(Exception.java:25)</p>
-<p>​                  at ptu.demo1.Exception.main(Exception.java:9)*&#x2F;</p>
-<p>​         }</p>
-<p>​         System.out.println(”后续代码”) ;</p>
-<p>​    }</p>
-<p>​         &#x2F;*如果传递的参数，不是.txt结尾</p>
-<p>​         那么我们就告知IO异常对象，告知方法的调用者，文件后缀名不对*&#x2F;</p>
-<p>​    public static void readFile (String fileName) throws IOException {</p>
-<p>​         if(!fileName.endsWith(“.txt”)){</p>
-<p>​              throw new IOException(“文件的后缀名不正确”);</p>
-<p>​         }</p>
-<p>​         </p>
-<p>​         System.out.println(“路径没有问题，读取文件”);</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>finally****代码块</strong></p>
-<p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="comment">//可能产生异常的代码</span></span><br><span class="line">			readFile(<span class="string">&quot;c:\\a.txt&quot;</span>);</span><br><span class="line">		&#125;<span class="keyword">catch</span>(IOException e)&#123;<span class="comment">//try中抛出什么异常对象，catch就定义什么异常变量，接收这个异常对象</span></span><br><span class="line">			<span class="comment">//异常的处理逻辑</span></span><br><span class="line">			System.out.println(e.getMessage());<span class="comment">//文件的后缀名不正确</span></span><br><span class="line">			System.out.println(e.toString ());<span class="comment">//java.io.IOException：文件的后缀名不正确</span></span><br><span class="line">			e.printStackTrace ();</span><br><span class="line">			<span class="comment">/*java.io.IOException：文件的后缀名不正确</span></span><br><span class="line"><span class="comment">				at ptu.demo1.Exception.readFile(Exception.java:25)</span></span><br><span class="line"><span class="comment">				at ptu.demo1.Exception.main(Exception.java:9)*/</span></span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">&quot;后续代码&quot;</span>) ;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">/*如果传递的参数，不是.txt结尾</span></span><br><span class="line"><span class="comment">		那么我们就告知IO异常对象，告知方法的调用者，文件后缀名不对*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">readFile</span> <span class="params">(String fileName)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">		<span class="keyword">if</span>(!fileName.endsWith(<span class="string">&quot;.txt&quot;</span>))&#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IOException</span>(<span class="string">&quot;文件的后缀名不正确&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;路径没有问题，读取文件&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="finally代码块"><a href="#finally代码块" class="headerlink" title="finally代码块"></a>finally代码块</h2><p>格式：</p>
 <p>​     try{</p>
 <p>​          可能产生异常的代码</p>
 <p>​     }catch(定义一个异常的变量，用来接收try中抛出的异常对象){</p>
@@ -2260,130 +1900,25 @@ var _hmt = _hmt || [];
 <p>注意：</p>
 <p>1、finally不能单独使用，必须和try一起使用。</p>
 <p>2、finally一般用于资源释放（资源回收），无论程序是否出现异常，最后都要资源释放（IO）</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) {</p>
-<p>​         try{</p>
-<p>​              &#x2F;&#x2F;可能产生异常的代码</p>
-<p>​             readFile(“c:\a.txt”);</p>
-<p>​        }catch(IOException e){&#x2F;&#x2F;try中抛出什么异常对象，catch就定义什么异常变量，接收这个异常对象</p>
-<p>​             &#x2F;&#x2F;异常的处理逻辑</p>
-<p>​             e.printStackTrace ();</p>
-<p>​        }finally{</p>
-<p>​             &#x2F;&#x2F;无论是否出现异常，都会执行</p>
-<p>​             System.out.println(“资源释放”);</p>
-<p>​        }</p>
-<p>​        System.out.println(”后续代码”) ;</p>
-<p>​    }</p>
-<p>​        &#x2F;*如果传递的参数，不是.txt结尾</p>
-<p>​        那么我们就告知IO异常对象，告知方法的调用者，文件后缀名不对*&#x2F;</p>
-<p>​    public static void readFile (String fileName) throws IOException {</p>
-<p>​        if(!fileName.endsWith(“.txt”)){</p>
-<p>​             throw new IOException(“文件的后缀名不正确”);</p>
-<p>​        }</p>
-<p>​        </p>
-<p>​        System.out.println(“路径没有问题，读取文件”);</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>异常的注意事项</strong></p>
-<p>多个异常使用捕获又该如何处理？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="comment">//可能产生异常的代码</span></span><br><span class="line">			readFile(<span class="string">&quot;c:\\a.txt&quot;</span>);</span><br><span class="line">		&#125;<span class="keyword">catch</span>(IOException e)&#123;<span class="comment">//try中抛出什么异常对象，catch就定义什么异常变量，接收这个异常对象</span></span><br><span class="line">			<span class="comment">//异常的处理逻辑</span></span><br><span class="line">			e.printStackTrace ();</span><br><span class="line">		&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="comment">//无论是否出现异常，都会执行</span></span><br><span class="line">			System.out.println(<span class="string">&quot;资源释放&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">&quot;后续代码&quot;</span>) ;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">/*如果传递的参数，不是.txt结尾</span></span><br><span class="line"><span class="comment">		那么我们就告知IO异常对象，告知方法的调用者，文件后缀名不对*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">readFile</span> <span class="params">(String fileName)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">		<span class="keyword">if</span>(!fileName.endsWith(<span class="string">&quot;.txt&quot;</span>))&#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IOException</span>(<span class="string">&quot;文件的后缀名不正确&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;路径没有问题，读取文件&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="异常的注意事项"><a href="#异常的注意事项" class="headerlink" title="异常的注意事项"></a>异常的注意事项</h2><p>多个异常使用捕获又该如何处理？</p>
 <p>1、多个异常分别处理。</p>
 <p>2、多个异常一次捕获，多次处理。</p>
 <p>注意：catch里面定义的异常变量，如果有子父类关系，那么子类的异常变量必须写在上边，否则就会报错。</p>
 <p>3、多个异常一次捕获，一次处理。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) {</p>
-<p>​         </p>
-<p>​         </p>
-<p>​         List<Integer> list &#x3D; List.of(1, 2, 3);</p>
-<p>​         System.out.println(list.get(3));</p>
-<p>​         </p>
-<p>​         &#x2F;&#x2F;1、多个异常分别处理</p>
-<p>​         try{</p>
-<p>​              int[] arr &#x3D; {1, 2, 3};</p>
-<p>​              System.out.println(arr[3]);</p>
-<p>​         }catch(ArrayIndexOutOfBoundsException e){</p>
-<p>​              System.out.println(e);</p>
-<p>​         }</p>
-<p>​         try{</p>
-<p>​              List<Integer> list &#x3D; List.of(1, 2, 3);</p>
-<p>​              System.out.println(list.get(3));</p>
-<p>​         }catch(IndexOutOfBoundsException e){</p>
-<p>​              System.out.println(e);</p>
-<p>​         }</p>
-<p>​         &#x2F;&#x2F;2、多个异常一次捕获，多次处理</p>
-<p>​         try{</p>
-<p>​              int[] arr &#x3D; {1, 2, 3};</p>
-<p>​              System.out.println(arr[3]);</p>
-<p>​              List<Integer> list &#x3D; List.of(1, 2, 3);</p>
-<p>​              System.out.println(list.get(3));</p>
-<p>​         }catch(ArrayIndexOutOfBoundsException e){</p>
-<p>​              System.out.println(e);</p>
-<p>​         }catch(IndexOutOfBoundsException e){</p>
-<p>​              System.out.println(e);</p>
-<p>​         }</p>
-<p>​         &#x2F;&#x2F;3、多个异常一次捕获，一次处理</p>
-<p>​         try{</p>
-<p>​              int[] arr &#x3D; {1, 2, 3};</p>
-<p>​              System.out.println(arr[3]);</p>
-<p>​              List<Integer> list &#x3D; List.of(1, 2, 3);</p>
-<p>​              System.out.println(list.get(3));</p>
-<p>​         }catch(IndexOutOfBoundsException e){</p>
-<p>​              System.out.println(e);</p>
-<p>​         }</p>
-<p>​         System.out.println(“后续代码”);</p>
-<p>​    }</p>
-<p>}</p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image062.png" alt="img"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		List&lt;Integer&gt; list = List.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">		System.out.println(list.get(<span class="number">3</span>));</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//1、多个异常分别处理</span></span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="type">int</span>[] arr = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">			System.out.println(arr[<span class="number">3</span>]);</span><br><span class="line">		&#125;<span class="keyword">catch</span>(ArrayIndexOutOfBoundsException e)&#123;</span><br><span class="line">			System.out.println(e);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			List&lt;Integer&gt; list = List.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">			System.out.println(list.get(<span class="number">3</span>));</span><br><span class="line">		&#125;<span class="keyword">catch</span>(IndexOutOfBoundsException e)&#123;</span><br><span class="line">			System.out.println(e);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//2、多个异常一次捕获，多次处理</span></span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="type">int</span>[] arr = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">			System.out.println(arr[<span class="number">3</span>]);</span><br><span class="line">			List&lt;Integer&gt; list = List.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">			System.out.println(list.get(<span class="number">3</span>));</span><br><span class="line">		&#125;<span class="keyword">catch</span>(ArrayIndexOutOfBoundsException e)&#123;</span><br><span class="line">			System.out.println(e);</span><br><span class="line">		&#125;<span class="keyword">catch</span>(IndexOutOfBoundsException e)&#123;</span><br><span class="line">			System.out.println(e);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//3、多个异常一次捕获，一次处理</span></span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="type">int</span>[] arr = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">			System.out.println(arr[<span class="number">3</span>]);</span><br><span class="line">			List&lt;Integer&gt; list = List.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">			System.out.println(list.get(<span class="number">3</span>));</span><br><span class="line">		&#125;<span class="keyword">catch</span>(IndexOutOfBoundsException e)&#123;</span><br><span class="line">			System.out.println(e);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">&quot;后续代码&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>如果finally有return语句，永远返回finally中的结果，避免该情况。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) {</p>
-<p>​         int a &#x3D; getA();</p>
-<p>​         System.out.println(a);&#x2F;&#x2F;100</p>
-<p>​    }</p>
-<p>​         &#x2F;&#x2F;定义一个方法，返回变量a的值</p>
-<p>​    public static int getA (){</p>
-<p>​         int a &#x3D; 10;</p>
-<p>​         try{</p>
-<p>​              return a;</p>
-<p>​         }catch(){</p>
-<p>​              System.out.println(e);</p>
-<p>​         }finally{</p>
-<p>​              &#x2F;&#x2F;一定会执行的代码</p>
-<p>​              a &#x3D; 100;</p>
-<p>​              return a;&#x2F;&#x2F;应该尽量避免该情况</p>
-<p>​         }</p>
-<p>​    }</p>
-<p>}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> getA();</span><br><span class="line">		System.out.println(a);<span class="comment">//100</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//定义一个方法，返回变量a的值</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getA</span> <span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> a;</span><br><span class="line">		&#125;<span class="keyword">catch</span>()&#123;</span><br><span class="line">			System.out.println(e);</span><br><span class="line">		&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="comment">//一定会执行的代码</span></span><br><span class="line">			a = <span class="number">100</span>;</span><br><span class="line">			<span class="keyword">return</span> a;<span class="comment">//应该尽量避免该情况</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>子父类的异常：</p>
 <p>​     如果父类抛出了多个异常，子类重写父类方法时，抛出和父类相同的异常或者是父类异常的子类     或者不抛出异常。</p>
 <p>​     父类方法没有抛出异常，子类重写父类该方法时也不能抛出异常。此时子类产生该异常，只能   捕获处理，不能声明抛出。</p>
 <p>注意：父类异常时什么样，子类异常就什么样。</p>
-<p>public class Fu{</p>
-<p>​    public void show01() throws NullPointerException, ClassCastException{}</p>
-<p>​    public void show02() throws IndexOutOfBoundsException{}</p>
-<p>​    public void show03() throws IndexOutOfBoundsException{}</p>
-<p>​    public void show04(){}</p>
-<p>}</p>
-<p>class Zi extends Fu{</p>
-<p>​    &#x2F;&#x2F;子类重写父类方法时，抛出和父类相同的异常</p>
-<p>​    public void show01() throws NullPointerException, ClassCastException{}</p>
-<p>​    &#x2F;&#x2F;子类重写父类方法时，抛出父类异常的子类</p>
-<p>​    public void show02() throws ArrayIndexOutOfBoundsException{}</p>
-<p>​    &#x2F;&#x2F;子类重写父类方法时，不抛出异常</p>
-<p>​    public void show03(){}</p>
-<p>​    &#x2F;&#x2F;父类方法没有抛出异常，子类重写父类该方法时也不能抛出异常</p>
-<p>​    public void show04(){}</p>
-<p>​    &#x2F;&#x2F;此时子类产生该异常，只能捕获处理，不能声明抛出</p>
-<p>​    public void show04(){</p>
-<p>​         try{</p>
-<p>​         throw new Exception()</p>
-<p>​         }catch (Exception e){</p>
-<p>​              e.printStackTrace();</p>
-<p>​         }</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>自定义异常类</strong></p>
-<p>Java提供的异常类，不够我们自己使用，需要定义一些异常类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Fu</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show01</span><span class="params">()</span> <span class="keyword">throws</span> NullPointerException, ClassCastException&#123;&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show02</span><span class="params">()</span> <span class="keyword">throws</span> IndexOutOfBoundsException&#123;&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show03</span><span class="params">()</span> <span class="keyword">throws</span> IndexOutOfBoundsException&#123;&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show04</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Zi</span> <span class="keyword">extends</span> <span class="title class_">Fu</span>&#123;</span><br><span class="line">	<span class="comment">//子类重写父类方法时，抛出和父类相同的异常</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show01</span><span class="params">()</span> <span class="keyword">throws</span> NullPointerException, ClassCastException&#123;&#125;</span><br><span class="line">	<span class="comment">//子类重写父类方法时，抛出父类异常的子类</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show02</span><span class="params">()</span> <span class="keyword">throws</span> ArrayIndexOutOfBoundsException&#123;&#125;</span><br><span class="line">	<span class="comment">//子类重写父类方法时，不抛出异常</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show03</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//父类方法没有抛出异常，子类重写父类该方法时也不能抛出异常</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show04</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">	<span class="comment">//此时子类产生该异常，只能捕获处理，不能声明抛出</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show04</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>()</span><br><span class="line">		&#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义异常类"><a href="#自定义异常类" class="headerlink" title="自定义异常类"></a>自定义异常类</h2><p>Java提供的异常类，不够我们自己使用，需要定义一些异常类。</p>
 <p>格式：</p>
 <p>​     public class XXXException extnds Exception | RuntimeException{</p>
 <p>​          添加一个空参数的构造方法</p>
@@ -2393,18 +1928,8 @@ var _hmt = _hmt || [];
 <p>1、自定义异常类，一般都是以Exception结尾，说明该类是一个异常类。</p>
 <p>2、自定义异常类，必须继承Exception或者RuntimeException</p>
 <p>​     继承Exception：那么自定义的异常类就是一个编译期异常，如果方法内部抛出了编译期异常，就     必须处理这个异常，要么throws，要么try…catch。</p>
-<p>​     继承RuntimeException：那么自定义的异常类就是一个运行期异常，无需处理，交给虚拟机处理（中 断处理）。</p>
-<p>public class RegisterException extends Exception{</p>
-<p>​    &#x2F;&#x2F;添加一个空参数构造方法</p>
-<p>​    public RegisterException(){</p>
-<p>​    }</p>
-<p>​    &#x2F;*添加一个带异常信息的构造方法</p>
-<p>​    查看源码发现，所有的异常类都会有一个带异常信息的构造方法</p>
-<p>​    方法内部会调用父类带异常信息的构造方法，让父类处理这个异常信息*&#x2F;</p>
-<p>​    public RegisterException(String message){</p>
-<p>​         super(message);</p>
-<p>​    }</p>
-<p>}</p>
+<p>​     继承RuntimeException：那么自定义的异常类就是一个运行期异常，无需处理，交给虚拟机处理（中断处理）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RegisterException</span> <span class="keyword">extends</span> <span class="title class_">Exception</span>&#123;</span><br><span class="line">	<span class="comment">//添加一个空参数构造方法</span></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">RegisterException</span><span class="params">()</span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*添加一个带异常信息的构造方法</span></span><br><span class="line"><span class="comment">	查看源码发现，所有的异常类都会有一个带异常信息的构造方法</span></span><br><span class="line"><span class="comment">	方法内部会调用父类带异常信息的构造方法，让父类处理这个异常信息*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">RegisterException</span><span class="params">(String message)</span>&#123;</span><br><span class="line">		<span class="built_in">super</span>(message);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -2526,7 +2051,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Object%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">一、Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#toString%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">toString方法</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Object%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">一、Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#toString%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">toString方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">equals方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">二、时间日期类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Date%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">Date类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateFormat%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text">DateFormat类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calendar%E7%B1%BB"><span class="toc-number">2.3.</span> <span class="toc-text">Calendar类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81System%E7%B1%BB"><span class="toc-number">3.</span> <span class="toc-text">三、System类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81Debug%E8%BF%BD%E8%B8%AA"><span class="toc-number">4.</span> <span class="toc-text">十一、Debug追踪</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E5%BC%82%E5%B8%B8"><span class="toc-number">5.</span> <span class="toc-text">十二、异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">5.1.</span> <span class="toc-text">异常的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%88%86%E7%B1%BB"><span class="toc-number">5.2.</span> <span class="toc-text">异常分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#throw%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">5.3.</span> <span class="toc-text">throw关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Objects%E9%9D%9E%E7%A9%BA%E5%88%A4%E6%96%AD"><span class="toc-number">5.4.</span> <span class="toc-text">Objects非空判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#throws%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">5.5.</span> <span class="toc-text">throws关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#try%E2%80%A6catch"><span class="toc-number">5.6.</span> <span class="toc-text">try…catch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Throwable%E7%B1%BB"><span class="toc-number">5.7.</span> <span class="toc-text">Throwable类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#finally%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">5.8.</span> <span class="toc-text">finally代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">5.9.</span> <span class="toc-text">异常的注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8%E7%B1%BB"><span class="toc-number">5.10.</span> <span class="toc-text">自定义异常类</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
