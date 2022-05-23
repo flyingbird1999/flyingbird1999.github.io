@@ -18,11 +18,8 @@
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image032.jpg">
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image034.jpg">
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image036.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image038.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image040.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg">
 <meta property="article:published_time" content="2021-07-29T11:29:05.000Z">
-<meta property="article:modified_time" content="2022-05-23T09:19:54.095Z">
+<meta property="article:modified_time" content="2022-05-23T13:27:25.733Z">
 <meta property="article:author" content="叶少鹏">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -885,12 +882,7 @@ var _hmt = _hmt || [];
 <p>​         return pathname.getName().toLowerCase().endsWith(“.java”);</p>
 <p>​    }</p>
 <p>}</p>
-<p><strong>三、****IO</strong></p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image038.jpg" alt="img"></p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image040.jpg" alt="img"></p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg" alt="img"></p>
-<p><strong>字节输出流</strong></p>
-<p>java.io.OutputStream：此抽象类是表示输出字节流的所有类的超类。</p>
+<h1 id="三、IO"><a href="#三、IO" class="headerlink" title="三、IO"></a>三、IO</h1><h2 id="字节输出流"><a href="#字节输出流" class="headerlink" title="字节输出流"></a>字节输出流</h2><p>java.io.OutputStream：此抽象类是表示输出字节流的所有类的超类。</p>
 <p>定义了一些子类共性的成员方法：</p>
 <p>​     public void close()：关闭此输出流并释放与此流相关联的任何系统资源。</p>
 <p>​     public void flush()：刷新此输出流并强制任何缓冲的输出字节被写出。</p>
@@ -916,20 +908,13 @@ var _hmt = _hmt || [];
 <p>1、创建一个FileOutputStream对象，构造方法中传递写入数据的目的地。</p>
 <p>2、调用FileOutputStream对象中的方法write，把数据写入到文件中。</p>
 <p>3、释放资源（流使用会占用一定的内存，使用完毕要把内存清空，提高程序的效率）。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String[] args) throws IOException{</p>
-<p>​         &#x2F;&#x2F;1、创建一个FileOutputStream对象，构造方法中传递写入数据的目的地</p>
-<p>​        FileOutputStream fos &#x3D; new FileOutputStream(“a\a.txt”);</p>
-<p>​        &#x2F;&#x2F;2、调用FileOutputStream对象中的方法write，把数据写入到文件中</p>
-<p>​        &#x2F;&#x2F; public abstract void write(int b)：将指定的字节输出流</p>
-<p>​        fos.write(97);&#x2F;&#x2F;a</p>
-<p>​        &#x2F;&#x2F;3、释放资源（流使用会占用一定的内存，使用完毕要把内存清空，提高程序的效率）</p>
-<p>​        fos.close();</p>
-<p>​    }</p>
-<p>}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">		<span class="comment">//1、创建一个FileOutputStream对象，构造方法中传递写入数据的目的地</span></span><br><span class="line">		<span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;a\\a.txt&quot;</span>);</span><br><span class="line">		<span class="comment">//2、调用FileOutputStream对象中的方法write，把数据写入到文件中</span></span><br><span class="line">		<span class="comment">// public abstract void write(int b)：将指定的字节输出流</span></span><br><span class="line">		fos.write(<span class="number">97</span>);<span class="comment">//a</span></span><br><span class="line">		<span class="comment">//3、释放资源（流使用会占用一定的内存，使用完毕要把内存清空，提高程序的效率）</span></span><br><span class="line">		fos.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>一次写多个字节的方法：</p>
 <p>public void write(byte[] b)：将b.length字节从指定的字节数组写入此输出流。</p>
 <p>public void write(byte[] b, int off, int len)：从指定的字节数组中写入len字节，从偏移量off开始输出到此输出流。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>public class Test{</p>
 <p>​    public static void main(String[] args) throws IOException{</p>
 <p>​         &#x2F;&#x2F;1、创建一个FileOutputStream对象，构造方法中传递写入数据的目的地</p>
@@ -1975,7 +1960,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">一、多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">创建多线程程序的第一种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thread%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text">Thread类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">创建多线程程序的第二种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.5.</span> <span class="toc-text">匿名内部类方式实现线程的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-number">1.6.</span> <span class="toc-text">线程安全问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">1.7.</span> <span class="toc-text">同步代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95"><span class="toc-number">1.8.</span> <span class="toc-text">同步方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lock%E9%94%81"><span class="toc-number">1.9.</span> <span class="toc-text">Lock锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="toc-number">1.10.</span> <span class="toc-text">线程状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object%E7%B1%BB%E4%B8%ADwait%E5%B8%A6%E5%8F%82%E6%96%B9%E6%B3%95%E5%92%8CnotifyAll%E6%96%B9%E6%B3%95"><span class="toc-number">1.11.</span> <span class="toc-text">Object类中wait带参方法和notifyAll方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E5%BE%85%E5%94%A4%E9%86%92%E6%9C%BA%E5%88%B6"><span class="toc-number">1.12.</span> <span class="toc-text">等待唤醒机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-number">1.13.</span> <span class="toc-text">线程池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3"><span class="toc-number">1.14.</span> <span class="toc-text">函数式编程思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.15.</span> <span class="toc-text">Lambda表达式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81File%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">二、File类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#File%E7%B1%BB%E7%9A%84%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text">File类的静态成员变量</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">一、多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">创建多线程程序的第一种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thread%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text">Thread类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">创建多线程程序的第二种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.5.</span> <span class="toc-text">匿名内部类方式实现线程的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-number">1.6.</span> <span class="toc-text">线程安全问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">1.7.</span> <span class="toc-text">同步代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95"><span class="toc-number">1.8.</span> <span class="toc-text">同步方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lock%E9%94%81"><span class="toc-number">1.9.</span> <span class="toc-text">Lock锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="toc-number">1.10.</span> <span class="toc-text">线程状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object%E7%B1%BB%E4%B8%ADwait%E5%B8%A6%E5%8F%82%E6%96%B9%E6%B3%95%E5%92%8CnotifyAll%E6%96%B9%E6%B3%95"><span class="toc-number">1.11.</span> <span class="toc-text">Object类中wait带参方法和notifyAll方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E5%BE%85%E5%94%A4%E9%86%92%E6%9C%BA%E5%88%B6"><span class="toc-number">1.12.</span> <span class="toc-text">等待唤醒机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-number">1.13.</span> <span class="toc-text">线程池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3"><span class="toc-number">1.14.</span> <span class="toc-text">函数式编程思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.15.</span> <span class="toc-text">Lambda表达式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81File%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">二、File类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#File%E7%B1%BB%E7%9A%84%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text">File类的静态成员变量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81IO"><span class="toc-number">3.</span> <span class="toc-text">三、IO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E8%BE%93%E5%87%BA%E6%B5%81"><span class="toc-number">3.1.</span> <span class="toc-text">字节输出流</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -2099,11 +2084,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">test</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>
