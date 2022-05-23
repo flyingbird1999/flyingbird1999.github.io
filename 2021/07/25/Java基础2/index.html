@@ -15,11 +15,6 @@
 <meta property="og:site_name" content="叶少鹏的博客">
 <meta property="og:description" content="一、Object类java.lang.Object类是Java语言的根类，即所有类的父类。它中描述的方法子类都可以使用。在对象实例化的时候，最终找的父类就是Object。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg">
-<meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg">
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg">
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg">
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image016.jpg">
@@ -45,11 +40,11 @@
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image051.jpg">
 <meta property="og:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image053.jpg">
 <meta property="article:published_time" content="2021-07-25T11:28:36.000Z">
-<meta property="article:modified_time" content="2022-05-23T08:49:27.551Z">
+<meta property="article:modified_time" content="2022-05-23T09:41:14.085Z">
 <meta property="article:author" content="叶少鹏">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg">
+<meta name="twitter:image" content="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg">
   
     <link rel="alternative" href="/atom.xml" title="叶少鹏的博客" type="application/atom+xml">
   
@@ -352,107 +347,31 @@ var _hmt = _hmt || [];
 <p>​           dest - 目标数组。 </p>
 <p>​           destPos - 目的地数据中的起始位置。 </p>
 <p>​           length - 要复制的数组元素的数量。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         demo01();</p>
-<p>​         demo02();</p>
-<p>​    }</p>
-<p>​    &#x2F;* public static long currentTimeMillis();返回以毫秒为单位的当前时间。</p>
-<p>​    用来测试程序的效率</p>
-<p>​    如验证for循环打印1-9999需要多少时间*&#x2F;</p>
-<p>​    public static void demo01(){</p>
-<p>​         &#x2F;&#x2F;程序执行前，获取一次毫秒值</p>
-<p>​         long s &#x3D; System.currentTimeMillis();</p>
-<p>​         &#x2F;&#x2F;执行for循环</p>
-<p>​         for (int i &#x3D; 1; i &lt;&#x3D; 9999 ; i++){</p>
-<p>​              System.out.println(i);</p>
-<p>​         }</p>
-<p>​         &#x2F;&#x2F;程序执行后，获取一次毫秒值</p>
-<p>​         long e &#x3D; System.currentTimeMillis();</p>
-<p>​         System.out.println(“程序共耗时：” + e – s + “毫秒”);</p>
-<p>​    }</p>
-<p>​    &#x2F;* public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length);</p>
-<p>​    将数组中指定的数据拷贝到另一组数据中。</p>
-<p>​    参数：src - 源数组。 </p>
-<p>​         srcPos - 源数组中的起始位置。 </p>
-<p>​         dest - 目标数组。 </p>
-<p>​         destPos - 目的地数据中的起始位置。 </p>
-<p>​         length - 要复制的数组元素的数量。</p>
-<p>​    练习：</p>
-<p>​    将src数组中前3个元素，复制到dest数组的前3个位置上</p>
-<p>​    复制元素前src数组元素{1,2,3,4,5}，dest数组元素{6,7,8,9,10}</p>
-<p>​    复制元素前src数组元素{1,2,3,4,5}，dest数组元素{1,2,3,9,10}*&#x2F;</p>
-<p>​    public static void demo02(){</p>
-<p>​         &#x2F;&#x2F;定义数组</p>
-<p>​         int [] src &#x3D; {1,2,3,4,5};</p>
-<p>​         int [] dest&#x3D;{6,7,8,9,10};</p>
-<p>​         &#x2F;&#x2F;使用System类arraycopy的方法</p>
-<p>​         System.arraycopy(src, 0, dest, 0, 3);</p>
-<p>​         System.out.println(Arrays.toString(dest));</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>四、<strong><strong>StringBuilder</strong></strong>类</strong></p>
-<p><strong>原理</strong></p>
-<p>String类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		demo01();</span><br><span class="line">		demo02();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* public static long currentTimeMillis();返回以毫秒为单位的当前时间。</span></span><br><span class="line"><span class="comment">	用来测试程序的效率</span></span><br><span class="line"><span class="comment">	如验证for循环打印1-9999需要多少时间*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo01</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="comment">//程序执行前，获取一次毫秒值</span></span><br><span class="line">		<span class="type">long</span> <span class="variable">s</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">		<span class="comment">//执行for循环</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= <span class="number">9999</span> ; i++)&#123;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//程序执行后，获取一次毫秒值</span></span><br><span class="line">		<span class="type">long</span> <span class="variable">e</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">		System.out.println(<span class="string">&quot;程序共耗时：&quot;</span> + e – s + <span class="string">&quot;毫秒&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length);</span></span><br><span class="line"><span class="comment">	将数组中指定的数据拷贝到另一组数据中。</span></span><br><span class="line"><span class="comment">	参数：src - 源数组。 </span></span><br><span class="line"><span class="comment">		  srcPos - 源数组中的起始位置。 </span></span><br><span class="line"><span class="comment">		  dest - 目标数组。 </span></span><br><span class="line"><span class="comment">		  destPos - 目的地数据中的起始位置。 </span></span><br><span class="line"><span class="comment">		  length - 要复制的数组元素的数量。</span></span><br><span class="line"><span class="comment">	练习：</span></span><br><span class="line"><span class="comment">	将src数组中前3个元素，复制到dest数组的前3个位置上</span></span><br><span class="line"><span class="comment">	复制元素前src数组元素&#123;1,2,3,4,5&#125;，dest数组元素&#123;6,7,8,9,10&#125;</span></span><br><span class="line"><span class="comment">	复制元素前src数组元素&#123;1,2,3,4,5&#125;，dest数组元素&#123;1,2,3,9,10&#125;*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">demo02</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="comment">//定义数组</span></span><br><span class="line">		<span class="type">int</span> [] src = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">		<span class="type">int</span> [] dest=&#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">		<span class="comment">//使用System类arraycopy的方法</span></span><br><span class="line">		System.arraycopy(src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">		System.out.println(Arrays.toString(dest));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="四、StringBuilder类"><a href="#四、StringBuilder类" class="headerlink" title="四、StringBuilder类"></a>四、StringBuilder类</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>String类</p>
 <p>字符串是常量，它们的值在创建之后不能更改。</p>
 <p>字符串的底层足一个被final修饰的数组，不能改变，是一个常量。</p>
 <p>进行字符串的相加，内存中就会有多个字符串，占用空间多，效率低下。</p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg" alt="img"></p>
 <p>StringBuilder类</p>
 <p>字符串缓冲区，可以提高字符串的操作效率（看成一个长度可以变化的字符串）底层也是一个数组，但是没有被final修饰，可以改变长度。</p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg" alt="img"></p>
 <p>StringBuilder在内存中始终是一个数组，占用空间少，效率高。</p>
 <p>如果超出了StringBuilder的容量，会自动的扩容。</p>
-<p><strong>构造方法</strong></p>
-<p>​     public StringBuilder()：构造一个空的StringBuilder容器</p>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>​     public StringBuilder()：构造一个空的StringBuilder容器</p>
 <p>​     public StringBuilder(String str)：构造一个StringBuilder容器，并将字符串添加进去。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         StringBuilder bu1 &#x3D; new StringBuilder();</p>
-<p>​         System.out.println(bu1);</p>
-<p>​         StringBuilder bu2 &#x3D; new StringBuilder(“abc”);</p>
-<p>​         System.out.println(bu2);</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>成员方法</strong></p>
-<p>public StringBuilder append(…)：添加任意类型数据的字符串形式，并返回当前对象自身。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         StringBuilder bu1 &#x3D; new StringBuilder();</p>
-<p>​         &#x2F;&#x2F;StringBuilder bu2 &#x3D; bu1.append(“abc”);</p>
-<p>​         &#x2F;&#x2F;System.out.println(bu1);&#x2F;&#x2F;abc</p>
-<p>​         &#x2F;&#x2F;System.out.println(bu2);&#x2F;&#x2F;abc</p>
-<p>​         &#x2F;&#x2F;System.out.println(bu1&#x3D;&#x3D;bu2);&#x2F;&#x2F;true两个对象是同一个对象</p>
-<p>​         &#x2F;&#x2F;使用append方法无需返回值</p>
-<p>​         &#x2F;&#x2F;bu1.append(“abc”);</p>
-<p>​         &#x2F;&#x2F;bu1.append(“123”);</p>
-<p>​         &#x2F;&#x2F;System.out.println(bu1);&#x2F;&#x2F;abc123</p>
-<p>​         &#x2F;&#x2F;链式编程：方法的返回值是一个对象，可以根据对象继续调用方法</p>
-<p>​         bu1.append(“abc”).append(“123”);</p>
-<p>​         System.out.println(bu1); &#x2F;&#x2F;abc123</p>
-<p>​    }</p>
-<p>}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="type">StringBuilder</span> <span class="variable">bu1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">		System.out.println(bu1);</span><br><span class="line"></span><br><span class="line">		<span class="type">StringBuilder</span> <span class="variable">bu2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">		System.out.println(bu2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h2><p>public StringBuilder append(…)：添加任意类型数据的字符串形式，并返回当前对象自身。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="type">StringBuilder</span> <span class="variable">bu1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">		<span class="comment">//StringBuilder bu2 = bu1.append(&quot;abc&quot;);</span></span><br><span class="line">		<span class="comment">//System.out.println(bu1);//abc</span></span><br><span class="line">		<span class="comment">//System.out.println(bu2);//abc</span></span><br><span class="line">		<span class="comment">//System.out.println(bu1==bu2);//true两个对象是同一个对象</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//使用append方法无需返回值</span></span><br><span class="line">		<span class="comment">//bu1.append(&quot;abc&quot;);</span></span><br><span class="line">		<span class="comment">//bu1.append(&quot;123&quot;);</span></span><br><span class="line">		<span class="comment">//System.out.println(bu1);//abc123</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//链式编程：方法的返回值是一个对象，可以根据对象继续调用方法</span></span><br><span class="line">		bu1.append(<span class="string">&quot;abc&quot;</span>).append(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">		System.out.println(bu1); <span class="comment">//abc123</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>StringBuilder和String可以相互转换：</p>
 <p>​     String àStringBuilder：可以使用StringBuilder的构造方法</p>
 <p>​          StringBuilder(String str)构造一个字符串生成器，并初始化为指定的字符串内容。</p>
 <p>​     String àStringBuilder：可以使用StringBuilder的toString方法</p>
 <p>​          public String toString()：将当前StringBuilder对象转换为String对象。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         String str &#x3D; “hello”;</p>
-<p>​         System.out.println(bu); &#x2F;&#x2F;hello</p>
-<p>​         StringBuilder bu &#x3D; new StringBuilder(str);</p>
-<p>​         &#x2F;&#x2F;往StringBuilder中添加数据</p>
-<p>​         bu.append(“world”);</p>
-<p>​         System.out.println(bu); &#x2F;&#x2F;helloworld</p>
-<p>​         &#x2F;&#x2F;StringBuilderàString</p>
-<p>​         String s &#x3D; bu.toString();</p>
-<p>​         System.out.println(s); &#x2F;&#x2F; helloworld</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>五、包装类</strong></p>
-<p><strong>概念</strong></p>
-<p>基本数据类型的数据，使用起来非常的方便但是没有对应的方法来操作这些数据。所以我们可以使用一个类，把基本类型的数据包装起来这个类叫包装类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">		System.out.println(bu); <span class="comment">//hello</span></span><br><span class="line"></span><br><span class="line">		<span class="type">StringBuilder</span> <span class="variable">bu</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(str);</span><br><span class="line">		<span class="comment">//往StringBuilder中添加数据</span></span><br><span class="line">		bu.append(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">		System.out.println(bu); <span class="comment">//helloworld</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//StringBuilderString</span></span><br><span class="line">		<span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> bu.toString();</span><br><span class="line">		System.out.println(s); <span class="comment">// helloworld</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="五、包装类"><a href="#五、包装类" class="headerlink" title="五、包装类"></a>五、包装类</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>基本数据类型的数据，使用起来非常的方便但是没有对应的方法来操作这些数据。所以我们可以使用一个类，把基本类型的数据包装起来这个类叫包装类。</p>
 <p>在包装类中可以定义一些方法,用来操作基本类型的数据。</p>
 <table>
 <thead>
@@ -494,8 +413,7 @@ var _hmt = _hmt || [];
 <td>Boolean</td>
 </tr>
 </tbody></table>
-<p><strong>装箱和拆箱</strong></p>
-<p>装箱：把基本类型的数据，包装到包装类中（基本类型数据à包装类）</p>
+<h2 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h2><p>装箱：把基本类型的数据，包装到包装类中（基本类型数据à包装类）</p>
 <p>构造方法：</p>
 <p>Integer(int value)构造一个新分配的Integer对象，它代表指定的int值。</p>
 <p>Integer(String s) 构造一个新分配的Integer对象，它代表String参数所指示的int值。</p>
@@ -506,81 +424,30 @@ var _hmt = _hmt || [];
 <p>拆箱：在包装类中取出基本类型的数据（包装类à基本类型数据）</p>
 <p>成员方法：</p>
 <p>int intValue() 以int类型返回该Integer值。</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         &#x2F;&#x2F;装箱：把基本类型的数据，包装到包装类中（基本类型数据包装类）</p>
-<p>​         &#x2F;&#x2F;构造方法</p>
-<p>​         Integer in1 &#x3D; new Integer(1);&#x2F;&#x2F;方法上有横线，说明方法过时了</p>
-<p>​         System.out.println(in1); &#x2F;&#x2F;1</p>
-<p>​         Integer in2 &#x3D; new Integer(“1”);</p>
-<p>​         System.out.println(in2); &#x2F;&#x2F;1</p>
-<p>​         &#x2F;&#x2F;静态方法</p>
-<p>​         Integer in3 &#x3D; Integer.valueOf(1);</p>
-<p>​         System.out.println(in3); &#x2F;&#x2F;1</p>
-<p>​         Integer in4 &#x3D; Integer.valueOf(“1”);</p>
-<p>​         System.out.println(in3); &#x2F;&#x2F;1</p>
-<p>​         &#x2F;&#x2F;在包装类中取出基本类型的数据（包装类基本类型数据）</p>
-<p>​         int i &#x3D; in1.intValue();</p>
-<p>​         System.out.println(i); &#x2F;&#x2F;1</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>自动装箱与自动拆箱</strong></p>
-<p>基本类型的数据和包装类直接可以自动的相互转换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="comment">//装箱：把基本类型的数据，包装到包装类中（基本类型数据包装类）</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//构造方法</span></span><br><span class="line">		<span class="type">Integer</span> <span class="variable">in1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">1</span>);<span class="comment">//方法上有横线，说明方法过时了</span></span><br><span class="line">		System.out.println(in1); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">		<span class="type">Integer</span> <span class="variable">in2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(“<span class="number">1</span>”);</span><br><span class="line">		System.out.println(in2); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//静态方法</span></span><br><span class="line">		<span class="type">Integer</span> <span class="variable">in3</span> <span class="operator">=</span> Integer.valueOf(<span class="number">1</span>);</span><br><span class="line">		System.out.println(in3); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">		<span class="type">Integer</span> <span class="variable">in4</span> <span class="operator">=</span> Integer.valueOf(“<span class="number">1</span>”);</span><br><span class="line">		System.out.println(in3); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//在包装类中取出基本类型的数据（包装类基本类型数据）</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> in1.intValue();</span><br><span class="line">		System.out.println(i); <span class="comment">//1</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自动装箱与自动拆箱"><a href="#自动装箱与自动拆箱" class="headerlink" title="自动装箱与自动拆箱"></a>自动装箱与自动拆箱</h2><p>基本类型的数据和包装类直接可以自动的相互转换</p>
 <p>JDK1.5之后出现的新特性</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         &#x2F;&#x2F;自动装箱：直接把int类型的整数赋值给包装类</p>
-<p>​         &#x2F;&#x2F;Integer in &#x3D; 1;就相当于Integer in &#x3D; new Integer(1);</p>
-<p>​         Integer in &#x3D; 1;</p>
-<p>​         &#x2F;*自动拆箱：in是包装类，无法直接参与运算</p>
-<p>​         可以自动转换为基本类型的数，再参与计算</p>
-<p>​         in + 2; 就相当于 in.intValue() + 2 &#x3D; 3;</p>
-<p>​         in &#x3D; in + 2; 就相当于in &#x3D; new Integer(3) 自动装箱*&#x2F;</p>
-<p>​         in &#x3D; in + 2;</p>
-<p>​         System.out.println(in); &#x2F;&#x2F;3</p>
-<p>​         &#x2F;&#x2F;ArrayList集合无法直接存储整数，可以存储Integer包装类</p>
-<p>​         ArrayList<Integer> list &#x3D; new ArrayList&lt;&gt;();</p>
-<p>​         list.add(1);&#x2F;&#x2F;自动装箱，相当于list.add(new Integer(1))</p>
-<p>​         int a &#x3D; list.get(0);&#x2F;&#x2F;自动拆箱 相当于list.get(0).intValue();</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>基本类型与字符串之间的转换</strong></p>
-<p>基本类型à字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="comment">//自动装箱：直接把int类型的整数赋值给包装类</span></span><br><span class="line">		<span class="comment">//Integer in = 1;就相当于Integer in = new Integer(1);</span></span><br><span class="line">		<span class="type">Integer</span> <span class="variable">in</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">		<span class="comment">/*自动拆箱：in是包装类，无法直接参与运算</span></span><br><span class="line"><span class="comment">		可以自动转换为基本类型的数，再参与计算</span></span><br><span class="line"><span class="comment">		in + 2; 就相当于 in.intValue() + 2 = 3;</span></span><br><span class="line"><span class="comment">		in = in + 2; 就相当于in = new Integer(3) 自动装箱*/</span></span><br><span class="line">		in = in + <span class="number">2</span>;</span><br><span class="line">		System.out.println(in); <span class="comment">//3</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//ArrayList集合无法直接存储整数，可以存储Integer包装类</span></span><br><span class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">		list.add(<span class="number">1</span>);<span class="comment">//自动装箱，相当于list.add(new Integer(1))</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> list.get(<span class="number">0</span>);<span class="comment">//自动拆箱 相当于list.get(0).intValue();</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="基本类型与字符串之间的转换"><a href="#基本类型与字符串之间的转换" class="headerlink" title="基本类型与字符串之间的转换"></a>基本类型与字符串之间的转换</h2><p>基本类型-&gt;字符串</p>
 <p>​     1、基本类型数据的值+””   最简单的方式（工作中常用）</p>
 <p>​     2、使用包装类中的静态方法</p>
 <p>​     static String toString(int i)返回一个表示指定整数的String对象</p>
 <p>​     3、使用String类中的静态方法</p>
 <p>​     static String valueOf(int i)返回int参数的字符串表示形式</p>
-<p>字符串à基本类型</p>
+<p>字符串-&gt;基本类型</p>
 <p>​     使用包装类的静态方法parseXxx(“字符串”)</p>
 <p>​     Integer类：static int parseInt(String s)</p>
 <p>​     Double类：static double parseDouble(String s)</p>
 <p>​     …</p>
 <p>​     除了Character类之外，其他所有包装类都具有parseXxx静态方法</p>
-<p>public class Test{</p>
-<p>​    public static void main(String [] args){</p>
-<p>​         &#x2F;&#x2F;基本类型à字符串</p>
-<p>​         String s1 &#x3D; 100 + “”;</p>
-<p>​         System.out.println(s1+200);&#x2F;&#x2F;100200</p>
-<p>​         String s2 &#x3D; Integer.toString(100);</p>
-<p>​         System.out.println(s2+200);&#x2F;&#x2F;100200</p>
-<p>​         String s3 &#x3D; String.valueOf(100);</p>
-<p>​         System.out.println(s3+200);&#x2F;&#x2F;100200</p>
-<p>​         &#x2F;&#x2F;字符串à基本类型</p>
-<p>​         int i &#x3D; Integer.parseInt(“100”);</p>
-<p>​         System.out.println(i+200);&#x2F;&#x2F;300</p>
-<p>​    }</p>
-<p>}</p>
-<p><strong>六、<strong><strong>Collection</strong></strong>集合</strong></p>
-<p>集合和数组的区别：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span>&#123;</span><br><span class="line">		<span class="comment">//基本类型字符串</span></span><br><span class="line">		<span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="number">100</span> + <span class="string">&quot;&quot;</span>;</span><br><span class="line">		System.out.println(s1+<span class="number">200</span>);<span class="comment">//100200</span></span><br><span class="line"></span><br><span class="line">		<span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> Integer.toString(<span class="number">100</span>);</span><br><span class="line">		System.out.println(s2+<span class="number">200</span>);<span class="comment">//100200</span></span><br><span class="line"></span><br><span class="line">		<span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> String.valueOf(<span class="number">100</span>);</span><br><span class="line">		System.out.println(s3+<span class="number">200</span>);<span class="comment">//100200</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//字符串基本类型</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> Integer.parseInt(<span class="string">&quot;100&quot;</span>);</span><br><span class="line">		System.out.println(i+<span class="number">200</span>);<span class="comment">//300</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="六、Collection集合"><a href="#六、Collection集合" class="headerlink" title="六、Collection集合"></a>六、Collection集合</h1><p>集合和数组的区别：</p>
 <p>1、数组的长度是固定的，集合的长度是可变的。</p>
 <p>2、数组中存储的是同一类型的元素，可以存储基本数据类型值，集合存储的都是对象。而且对象的类型可以不一致。在开发中一般当对象多得时候，使用集合进行存储。</p>
-<p><strong>集合的框架</strong></p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg" alt="img"></p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg" alt="img"></p>
-<p><img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg" alt="img"></p>
-<p><strong>常用功能</strong></p>
-<p>Collection接口是所有单列集合的最顶层的接口，里面定义了所有单列集合的共性方法。</p>
+<h2 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h2><p>Collection接口是所有单列集合的最顶层的接口，里面定义了所有单列集合的共性方法。</p>
 <p>任意的单列集合都可以使用Collection接口中的方法。</p>
 <p>共性的方法：</p>
 <p>public boolean add(E e)：把给定的对象添加到当前集合中。</p>
@@ -590,6 +457,10 @@ var _hmt = _hmt || [];
 <p>public boolean isEmpty()：判断当前集合是否为空。</p>
 <p>public int size()：返回集合中元素的个数。</p>
 <p>public Object[] toArray()：把集合中的元素，存储到数组中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <p>public class Test{</p>
 <p>​    public static void main(String [] args){</p>
 <p>​         &#x2F;&#x2F;创建集合对象，可以使用多态</p>
@@ -2051,7 +1922,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Object%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">一、Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#toString%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">toString方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">equals方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">二、时间日期类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Date%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">Date类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateFormat%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text">DateFormat类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calendar%E7%B1%BB"><span class="toc-number">2.3.</span> <span class="toc-text">Calendar类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81System%E7%B1%BB"><span class="toc-number">3.</span> <span class="toc-text">三、System类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81Debug%E8%BF%BD%E8%B8%AA"><span class="toc-number">4.</span> <span class="toc-text">十一、Debug追踪</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E5%BC%82%E5%B8%B8"><span class="toc-number">5.</span> <span class="toc-text">十二、异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">5.1.</span> <span class="toc-text">异常的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%88%86%E7%B1%BB"><span class="toc-number">5.2.</span> <span class="toc-text">异常分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#throw%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">5.3.</span> <span class="toc-text">throw关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Objects%E9%9D%9E%E7%A9%BA%E5%88%A4%E6%96%AD"><span class="toc-number">5.4.</span> <span class="toc-text">Objects非空判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#throws%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">5.5.</span> <span class="toc-text">throws关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#try%E2%80%A6catch"><span class="toc-number">5.6.</span> <span class="toc-text">try…catch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Throwable%E7%B1%BB"><span class="toc-number">5.7.</span> <span class="toc-text">Throwable类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#finally%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">5.8.</span> <span class="toc-text">finally代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">5.9.</span> <span class="toc-text">异常的注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8%E7%B1%BB"><span class="toc-number">5.10.</span> <span class="toc-text">自定义异常类</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Object%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">一、Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#toString%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">toString方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">equals方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">二、时间日期类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Date%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">Date类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateFormat%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text">DateFormat类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calendar%E7%B1%BB"><span class="toc-number">2.3.</span> <span class="toc-text">Calendar类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81System%E7%B1%BB"><span class="toc-number">3.</span> <span class="toc-text">三、System类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81StringBuilder%E7%B1%BB"><span class="toc-number">4.</span> <span class="toc-text">四、StringBuilder类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">4.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">4.2.</span> <span class="toc-text">构造方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95"><span class="toc-number">4.3.</span> <span class="toc-text">成员方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="toc-number">5.</span> <span class="toc-text">五、包装类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">5.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1"><span class="toc-number">5.2.</span> <span class="toc-text">装箱和拆箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%8B%86%E7%AE%B1"><span class="toc-number">5.3.</span> <span class="toc-text">自动装箱与自动拆箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.4.</span> <span class="toc-text">基本类型与字符串之间的转换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81Collection%E9%9B%86%E5%90%88"><span class="toc-number">6.</span> <span class="toc-text">六、Collection集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="toc-number">6.1.</span> <span class="toc-text">常用功能</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81Debug%E8%BF%BD%E8%B8%AA"><span class="toc-number">7.</span> <span class="toc-text">十一、Debug追踪</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E5%BC%82%E5%B8%B8"><span class="toc-number">8.</span> <span class="toc-text">十二、异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">8.1.</span> <span class="toc-text">异常的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%88%86%E7%B1%BB"><span class="toc-number">8.2.</span> <span class="toc-text">异常分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#throw%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">8.3.</span> <span class="toc-text">throw关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Objects%E9%9D%9E%E7%A9%BA%E5%88%A4%E6%96%AD"><span class="toc-number">8.4.</span> <span class="toc-text">Objects非空判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#throws%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">8.5.</span> <span class="toc-text">throws关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#try%E2%80%A6catch"><span class="toc-number">8.6.</span> <span class="toc-text">try…catch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Throwable%E7%B1%BB"><span class="toc-number">8.7.</span> <span class="toc-text">Throwable类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#finally%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">8.8.</span> <span class="toc-text">finally代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">8.9.</span> <span class="toc-text">异常的注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8%E7%B1%BB"><span class="toc-number">8.10.</span> <span class="toc-text">自定义异常类</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
