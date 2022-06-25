@@ -152,6 +152,117 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/25/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Linux常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2022/06/25/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2022-06-25T11:47:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h1><p><code>cd /home</code> 进入home目录</p>
+<p><code>cd ..</code> 返回上一级目录</p>
+<p><code>cd ../..</code> 返回上两级目录</p>
+<p><code>cd ~user1</code> 进入个人主目录</p>
+<p><code>cd -</code> 返回上次工作目录</p>
+<p><code>pwd</code> 显示工作路径</p>
+<p><code>ls</code> 查看目录中的文件</p>
+<p><code>ls -F</code> 查看目录中的文件每个目录名加 “&#x2F;“ 后缀，每个 FIFO 名加 “|” 后缀， 每个可运行名加“ * ”后缀</p>
+<p><code>ls -l</code> 显示文件和目录的详细资料</p>
+<p><code>ls -a</code> 显示隐藏文件</p>
+<p><code>ls *[0-9]*</code> 显示包含数字的文件名和目录名</p>
+<p><code>tree</code> 显示文件和目录由根目录开始的树形结构</p>
+<p><code>mkdir dir1</code> 创建一个叫dir1的目录</p>
+<p><code>mkdir dir1 dir2</code> 创建两个目录</p>
+<p><code>mkdir -p /tmp/dir1/dir2</code> 创建一个目录树</p>
+<p><code>rm -f file1</code> 删除一个叫file1的文件</p>
+<p><code>rmdir dir1</code> 删除一个叫dir1的目录</p>
+<p><code>rm -rf dir1</code> 删除一个叫dir1的目录，并删除其内容</p>
+<p><code>rm -rf dir1 dir2</code> 删除两个目录及其内容</p>
+<p><code>mv dir1 new_dir</code> 重命名&#x2F;移动一个目录</p>
+<p><code>cp file1 file2</code> 复制一个文件</p>
+<p><code>cp dir/*</code> 复制一个目录下的所有文件到当前工作目录</p>
+<p><code>cp -a /tmp/dir1</code> 复制一个目录到当前工作目录</p>
+<p><code>cp -a dir1 dir2</code> 复制一个目录</p>
+<p><code>cp -r dir1 dir2</code> 复制一个目录及子目录</p>
+<p><code>ln -s file1 lnk1</code> 创建一个指向文件或目录的软链接</p>
+<p><code>ln file1 lnk1</code> 创建一个指向文件或目录的物理链接</p>
+<p><code>touch -t 2206250000 file1</code> 修改一个文件或目录的时间戳（YYMMDDhhmm）</p>
+<h1 id="文件搜索"><a href="#文件搜索" class="headerlink" title="文件搜索"></a>文件搜索</h1><p><code>find / -name file1</code> 从“&#x2F;”开始进入根文件系统搜索文件和目录</p>
+<p><code>find / -user user1</code> 搜索属于用户user1的文件和目录</p>
+<p><code>find /home/user1 -name \*.bin</code> 在目录“&#x2F;home&#x2F;user1”中搜索带有“bin”结尾的文件</p>
+<p><code>find /usr/bin -type f -atime +100</code> 搜索在过去100天内未被创建或修改过的文件</p>
+<p><code>find /usr/bin -type f -mtime -10</code> 搜索在10天内被创建或修改过的文件</p>
+<p><code>find / -name \*.rpm -exec chmod 755 &#39;&#123;&#125;&#39; \;</code> 搜索以 ‘.rpm’ 结尾的文件并定义其权限</p>
+<p><code>find / -xdev -name \*.rpm</code> 搜索以 ‘.rpm’ 结尾的文件，忽略光驱、捷盘等可移动设备</p>
+<p><code>locate \*.ps</code> 寻找以 ‘.ps’ 结尾的文件 - 先运行 ‘updatedb’ 命令</p>
+<p><code>whereis halt</code> 显示一个二进制文件、源码或man的位置</p>
+<p><code>which halt</code> 显示一个二进制文件或可执行文件的完整路径</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/06/25/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -854,83 +965,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-Java基础1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/21/Java%E5%9F%BA%E7%A1%801/">Java基础1</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/21/Java%E5%9F%BA%E7%A1%801/" class="archive-article-date">
-  	<time datetime="2021-07-21T08:55:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、Java介绍"><a href="#一、Java介绍" class="headerlink" title="一、Java介绍"></a>一、Java介绍</h1><h2 id="面向对象的特征"><a href="#面向对象的特征" class="headerlink" title="面向对象的特征"></a>面向对象的特征</h2><p>（1）封装性</p>
-<p>​		封装是面向对象的核心思想，将对象的属性和行为封装起来，不需要让外界知道具体实现细节，这就是封装思想。例如，用户使用电脑，只需要使用手指敲键盘就可以了，无需知道电脑内部是如何工作的，即使用户可能碰巧知道电脑的工作原理，但在使用时，并不完全依赖电脑工作原理这些细节。</p>
-        
-          <a class="article-more-a" href="/2021/07/21/Java%E5%9F%BA%E7%A1%801/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/21/Java%E5%9F%BA%E7%A1%801/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1036,15 +1070,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">test</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
             
             <div class="clearfix"></div>
