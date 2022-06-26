@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Linux常用命令 | 叶少鹏的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文件和目录cd &#x2F;home 进入home目录 cd .. 返回上一级目录 cd ..&#x2F;.. 返回上两级目录 cd ~user1 进入个人主目录 cd - 返回上次工作目录 pwd 显示工作路径">
+  <meta name="description" content="一、文件和目录cd &#x2F;home 进入home目录 cd .. 返回上一级目录 cd ..&#x2F;.. 返回上两级目录 cd ~user1 进入个人主目录 cd - 返回上次工作目录 pwd 显示工作路径">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux常用命令">
 <meta property="og:url" content="http://example.com/2022/06/25/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="叶少鹏的博客">
-<meta property="og:description" content="文件和目录cd &#x2F;home 进入home目录 cd .. 返回上一级目录 cd ..&#x2F;.. 返回上两级目录 cd ~user1 进入个人主目录 cd - 返回上次工作目录 pwd 显示工作路径">
+<meta property="og:description" content="一、文件和目录cd &#x2F;home 进入home目录 cd .. 返回上一级目录 cd ..&#x2F;.. 返回上两级目录 cd ~user1 进入个人主目录 cd - 返回上次工作目录 pwd 显示工作路径">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-25T11:47:34.000Z">
-<meta property="article:modified_time" content="2022-06-25T12:50:16.633Z">
+<meta property="article:modified_time" content="2022-06-26T16:49:30.511Z">
 <meta property="article:author" content="叶少鹏">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -175,7 +175,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h1><p><code>cd /home</code> 进入home目录</p>
+        <h1 id="一、文件和目录"><a href="#一、文件和目录" class="headerlink" title="一、文件和目录"></a>一、文件和目录</h1><p><code>cd /home</code> 进入home目录</p>
 <p><code>cd ..</code> 返回上一级目录</p>
 <p><code>cd ../..</code> 返回上两级目录</p>
 <p><code>cd ~user1</code> 进入个人主目录</p>
@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 <p><code>ln -s file1 lnk1</code> 创建一个指向文件或目录的软链接</p>
 <p><code>ln file1 lnk1</code> 创建一个指向文件或目录的物理链接</p>
 <p><code>touch -t 2206250000 file1</code> 修改一个文件或目录的时间戳（YYMMDDhhmm）</p>
-<h1 id="文件搜索"><a href="#文件搜索" class="headerlink" title="文件搜索"></a>文件搜索</h1><p><code>find / -name file1</code> 从“&#x2F;”开始进入根文件系统搜索文件和目录</p>
+<h1 id="二、文件搜索"><a href="#二、文件搜索" class="headerlink" title="二、文件搜索"></a>二、文件搜索</h1><p><code>find / -name file1</code> 从“&#x2F;”开始进入根文件系统搜索文件和目录</p>
 <p><code>find / -user user1</code> 搜索属于用户user1的文件和目录</p>
 <p><code>find /home/user1 -name \*.bin</code> 在目录“&#x2F;home&#x2F;user1”中搜索带有“bin”结尾的文件</p>
 <p><code>find /usr/bin -type f -atime +100</code> 搜索在过去100天内未被创建或修改过的文件</p>
@@ -215,6 +215,60 @@ var _hmt = _hmt || [];
 <p><code>locate \*.ps</code> 寻找以 ‘.ps’ 结尾的文件 - 先运行 ‘updatedb’ 命令</p>
 <p><code>whereis halt</code> 显示一个二进制文件、源码或man的位置</p>
 <p><code>which halt</code> 显示一个二进制文件或可执行文件的完整路径</p>
+<h1 id="三、用户和群组"><a href="#三、用户和群组" class="headerlink" title="三、用户和群组"></a>三、用户和群组</h1><p><code>groupadd group_name</code> 创建一个新用户</p>
+<p><code>groupdel group_name</code> 删除一个用户组</p>
+<p><code>groupmod -n new_group_name old_group_name</code> 重命名一个用户组</p>
+<p><code>useradd -c &quot;Name Surname&quot; -g admin -d /home/user1 -s /bin/bash user1</code> 创建一个属于admin用户组的用户</p>
+<p><code>useradd user1</code> 创建一个新用户</p>
+<p><code>userdel -r user1</code> 删除一个用户（-r排除主目录）</p>
+<p><code>usermod -c &quot;User FTP&quot; -g system -d /ftp/user1 -s /bin/nologin user1</code> 修改用户属性</p>
+<p><code>passwd</code> 修改口令</p>
+<p><code>passwd user1</code> 修改一个用户的口令（只允许root执行）</p>
+<p><code>chage -E 2022-06-27 user1</code> 设置用户口令的失效期限</p>
+<p><code>pwck</code> 检查 &#x2F;etc&#x2F;passwd’的文件格式和语法修正以及存在的用户</p>
+<p><code>grpck</code> 检查 ‘&#x2F;etc&#x2F;passwd’ 的文件格式和语法修正以及存在的群组</p>
+<p><code>newgrp group_name</code> 登陆进一个新的群组以改变新创建文件的预设群组</p>
+<h1 id="四、文件的权限"><a href="#四、文件的权限" class="headerlink" title="四、文件的权限"></a>四、文件的权限</h1><p><code>ls -lh</code> 显示权限</p>
+<p><code>chmod ugo+rwx directory1</code> 设置目录的所有人（u）、群组（g）、其他人（o）以读（r）、写（w）和执行（x）的权限</p>
+<p><code>chmod go-rwx directory1</code> 删除群组（g）与其他人（o）对目录的读写以及执行权限</p>
+<p><code>chown user1 file1</code> 改变一个文件的所有人属性</p>
+<p><code>chown -R user1 directory1</code> 改变一个目录的所有人属性并同时改变目录下所有文件的属性</p>
+<p><code>chgrp group1 file1</code> 改变文件的群组</p>
+<p><code>chown user1 group1 file1</code> 改变一个文件的所有人和群组的属性</p>
+<h1 id="五、打包和压缩文件"><a href="#五、打包和压缩文件" class="headerlink" title="五、打包和压缩文件"></a>五、打包和压缩文件</h1><p><code>bunzip2 file1.bz2</code> 解压一个叫做file1.bz2的文件</p>
+<p><code>bzip2 file1</code> 压缩一个叫做file1的文件</p>
+<p><code>gunzip file1.gz</code> 解压一个叫做file1.gz的文件</p>
+<p><code>gzip file1</code> 压缩一个叫做file1的文件</p>
+<p><code>gzip -9 file1</code> 最大程度压缩</p>
+<p><code>rar a file1.rar test_file</code> 创建一个叫做file1.rar的包</p>
+<p><code>rar a file1 file2 dir1</code> 同时压缩file1、file2、目录dir1</p>
+<p><code>rar x file1.rar</code> 解压rar压缩包</p>
+<p><code>unrar x file1.rar</code> 解压rar压缩包</p>
+<p><code>tar -cvf archive.tar file1</code> 创建一个非压缩的tarball</p>
+<p><code>tar -cvf archive.tar file1 file2 dir1</code> 创建一个包含了file1、file2、dir1的档案文件</p>
+<p><code>tar -tf archive.tar</code> 显示一个包中的内容</p>
+<p><code>tar -xvf archive.tar</code> 释放一个包</p>
+<p><code>tar -xvf archive.tar -C /tmp</code> 将压缩包释放到&#x2F;tmp目录下</p>
+<p><code>tar -cvfj archive.tar.bz2 dir1</code> 创建一个bzip2格式的压缩包</p>
+<p><code>tar -jxvf archive.tar.bz2</code> 解压一个bzip2格式的压缩包</p>
+<p><code>tar -cvfz archive.tar.gz dir1</code> 创建一个gzip格式的压缩包</p>
+<p><code>tar -zxvf archive.tar.gz</code> 解压一个gzip格式的压缩包</p>
+<p><code>zip file1.zip file1</code> 创建一个zip格式的压缩包</p>
+<p><code>zip -r file1.zip file1 file2 dir1</code> 将几个文件和目录同时压缩成一个zip格式的压缩包</p>
+<p><code>unzip file1.zip</code> 解压一个zip格式的压缩包</p>
+<h1 id="六、查看文件内容"><a href="#六、查看文件内容" class="headerlink" title="六、查看文件内容"></a>六、查看文件内容</h1><p><code>cat file1</code> 从第一个字节开始正向查看文件的内容</p>
+<p><code>tac file1</code> 从最后一行开始反向查看一个文件的内容</p>
+<p><code>more file1</code> 查看一个长文件的内容</p>
+<p><code>less file1</code> 类似于more命令，但是它允许在文件中和正向操作一样的反向操作</p>
+<p><code>head -2 file1</code> 查看一个文件的前两行</p>
+<p><code>tail -2 file1</code> 查看一个文件的最后两行</p>
+<p><code>tail -f /var/log/messages</code> 实时查看被添加到一个文件中的内容</p>
+<h1 id="七、进入root权限"><a href="#七、进入root权限" class="headerlink" title="七、进入root权限"></a>七、进入root权限</h1><h2 id="暂时的"><a href="#暂时的" class="headerlink" title="暂时的"></a>暂时的</h2><p><code>sudo + &lt;指令&gt;</code>  使用root权限，而不是直接进入。如：<code>sudo chmod 777 /etc/sudoers</code>。</p>
+<p>这里我们输入<code>sudo -i</code>，再输入你的用户密码，就会进入root模式了。</p>
+<p>但是这个方法持续的时间只有五分钟，想要延长时间可以用<code>sudo -v</code>再延长五分钟。</p>
+<h2 id="非暂时的"><a href="#非暂时的" class="headerlink" title="非暂时的"></a>非暂时的</h2><p><code>sudo passwd root </code> 再输入用户密码，接下来会让你设置root密码，并再次确认。</p>
+<p>接下来输入<code>su</code>，再输入刚刚设置的root密码就可以进入root了。</p>
+<p>输入<code>exit</code>即可。</p>
 
       
 
@@ -327,7 +381,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">文件和目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2"><span class="toc-number">2.</span> <span class="toc-text">文件搜索</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">一、文件和目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2"><span class="toc-number">2.</span> <span class="toc-text">二、文件搜索</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%94%A8%E6%88%B7%E5%92%8C%E7%BE%A4%E7%BB%84"><span class="toc-number">3.</span> <span class="toc-text">三、用户和群组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%96%87%E4%BB%B6%E7%9A%84%E6%9D%83%E9%99%90"><span class="toc-number">4.</span> <span class="toc-text">四、文件的权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%89%93%E5%8C%85%E5%92%8C%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">五、打包和压缩文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">6.</span> <span class="toc-text">六、查看文件内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E8%BF%9B%E5%85%A5root%E6%9D%83%E9%99%90"><span class="toc-number">7.</span> <span class="toc-text">七、进入root权限</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9A%82%E6%97%B6%E7%9A%84"><span class="toc-number">7.1.</span> <span class="toc-text">暂时的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E6%9A%82%E6%97%B6%E7%9A%84"><span class="toc-number">7.2.</span> <span class="toc-text">非暂时的</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -447,15 +501,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
